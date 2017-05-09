@@ -1,0 +1,46 @@
+﻿ @import "../partials/mixing";
+.header {
+        position:relative;background-color: #1F3F81;
+        }
+ .header .header-tab1 {margin:  auto;border-radius:0;}
+ .header .header-tab2 .navbar {   border-radius:0;}
+
+
+
+
+.property-detail-wraper {padding:75px 2%;    background-attachment: fixed;    background-size: cover ;background-image: url('/../../../images/unit-detail-bg.jpg');color:white;text-align:center;
+                .heading{font-weight:bold;}
+                .para{}
+}
+
+
+.property-detail-slider{    padding:35px 2%; 
+
+                            article{
+                                    .heading{}
+                            }
+
+
+                           .single-slider {max-height: 700px;
+    overflow: hidden;}
+
+.multislider{    padding: 15px 0;
+              .owl-prev {   position: absolute; left: 0; top: 25%; font-size: 20px; background-color: rgba(250,250,250,0.8); padding: 15px;}
+                .owl-next{   position: absolute; right: 0; top: 25%; font-size: 20px;  background-color: rgba(250,250,250,0.8); padding: 15px;}
+}
+                        
+
+}
+
+
+
+.property-amienties{
+    .am-div{ padding: 0; border-right: 5px solid white;  span{text-align:center;background: #3a3a3a;color:white;display:block;    padding: 15px ;}
+i{padding-right:5px;font-size:18px;}
+    }
+
+}
+
+
+.padding15{    padding: 25px 0; h2{margin:2% auto;}  @include vp_min(767px){    .paddingL{padding-left:0;}  }       }
+

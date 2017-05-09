@@ -1,0 +1,26 @@
+﻿.home-banner{
+background-image: url('/../../../images/home-banner.jpg');padding-top: 25%; padding-bottom: 25%; background-attachment: fixed;
+
+        article .heading{margin:0;        color: white;
+                         .heading-top{font-size: 32px;    display: block;    font-weight: 600;}
+                         strong{font-size: 64px;}
+                         .heading-bottom{    font-size: 15px;}
+            }
+        
+       
+}
+.form-container{
+              padding: 20px 15px;background-color:rgba(250,250,250,0.5);
+                    
+                .btn-theme{font-size: 14px;
+    padding: 14px 35px;    display: inline-block;    font-weight: bold;    position: relative;    overflow: hidden;    z-index: 1;
+    -webkit-transition-property: background;    transition-property: background;    color: #fff;    background: #1F3F81;    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;}
+
+    .btn-blue:hover, .btn-white-fill:hover {
+    background: #1f1d22;
+    }
+    .form-control{    padding: 25px 15px;}
+      
+      }
+

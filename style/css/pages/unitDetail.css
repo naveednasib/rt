@@ -1,0 +1,100 @@
+/*=========================== media query mixin=================*/
+/*prefix*/
+/*prefix*/
+/*placeholder*/
+/* line 2, ../../scss/pages/unitDetail.scss */
+.header {
+  position: relative;
+  background-color: #1F3F81;
+}
+
+/* line 5, ../../scss/pages/unitDetail.scss */
+.header .header-tab1 {
+  margin: auto;
+  border-radius: 0;
+}
+
+/* line 6, ../../scss/pages/unitDetail.scss */
+.header .header-tab2 .navbar {
+  border-radius: 0;
+}
+
+/* line 11, ../../scss/pages/unitDetail.scss */
+.property-detail-wraper {
+  padding: 75px 2%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("/../../../images/unit-detail-bg.jpg");
+  color: white;
+  text-align: center;
+}
+/* line 12, ../../scss/pages/unitDetail.scss */
+.property-detail-wraper .heading {
+  font-weight: bold;
+}
+
+/* line 17, ../../scss/pages/unitDetail.scss */
+.property-detail-slider {
+  padding: 35px 2%;
+}
+/* line 24, ../../scss/pages/unitDetail.scss */
+.property-detail-slider .single-slider {
+  max-height: 700px;
+  overflow: hidden;
+}
+/* line 27, ../../scss/pages/unitDetail.scss */
+.property-detail-slider .multislider {
+  padding: 15px 0;
+}
+/* line 28, ../../scss/pages/unitDetail.scss */
+.property-detail-slider .multislider .owl-prev {
+  position: absolute;
+  left: 0;
+  top: 25%;
+  font-size: 20px;
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 15px;
+}
+/* line 29, ../../scss/pages/unitDetail.scss */
+.property-detail-slider .multislider .owl-next {
+  position: absolute;
+  right: 0;
+  top: 25%;
+  font-size: 20px;
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 15px;
+}
+
+/* line 38, ../../scss/pages/unitDetail.scss */
+.property-amienties .am-div {
+  padding: 0;
+  border-right: 5px solid white;
+}
+/* line 38, ../../scss/pages/unitDetail.scss */
+.property-amienties .am-div span {
+  text-align: center;
+  background: #3a3a3a;
+  color: white;
+  display: block;
+  padding: 15px;
+}
+/* line 39, ../../scss/pages/unitDetail.scss */
+.property-amienties .am-div i {
+  padding-right: 5px;
+  font-size: 18px;
+}
+
+/* line 45, ../../scss/pages/unitDetail.scss */
+.padding15 {
+  padding: 25px 0;
+}
+/* line 45, ../../scss/pages/unitDetail.scss */
+.padding15 h2 {
+  margin: 2% auto;
+}
+@media (min-width: 767px) {
+  /* line 45, ../../scss/pages/unitDetail.scss */
+  .padding15 .paddingL {
+    padding-left: 0;
+  }
+}

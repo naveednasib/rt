@@ -1,0 +1,58 @@
+﻿
+/*=========================== media query mixin=================*/
+
+@mixin vp_range($min_px,$max_px) {
+  
+
+@media (min-width: $min_px) and (max-width: $max_px){
+
+@content;
+
+}
+ 
+}
+@mixin vp_fix($pxSize) {
+  
+
+@media (max-width: $pxSize) {
+
+@content;
+
+}
+ 
+}
+
+@mixin vp_min($pxSize) {
+  
+
+@media (min-width: $pxSize) {
+
+@content;
+
+}
+ 
+}
+
+
+
+
+/*prefix*/
+
+@mixin prefix ($prop, $val){
+    -webkit-#{$prop}:#{$val};
+       -moz-#{$prop}:#{$val};
+       -ms-transform-#{$prop}:#{$val};
+-o-#{$prop}:#{$val};
+            #{$prop}:#{$val};
+}
+/*prefix*/
+
+
+/*placeholder*/
+
+@mixin placeholder{
+&.placeholder{@content}
+&:-moz-placeholder{@content}
+&::-webkit-input-placeholder{@content}
+  
+}

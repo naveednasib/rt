@@ -1,0 +1,109 @@
+﻿
+
+
+.slilder-container{padding:50px 15px;
+                   .txtx   .heading{font-weight:bold;    font-family: Roboto;}
+                  txtx    .para{color: grey;font-weight:bold;    font-family: Roboto;}
+                  .item { @include vp_fix(767px){img{width:100%;max-width:100%;margin:2% auto;}}}
+               
+.abs-sale{position: absolute;
+    right: 10%;
+    top: 5%;
+    color: black;
+    background-color: #FFD119;
+    font-size: 12px;
+    padding: 2%;}
+
+
+.carousel-control.left{
+    
+}
+.control-container{ 
+     position: absolute;
+    width: 300px;
+    right: 0;
+    top: 0; text-align: center;
+
+
+}
+
+
+
+.detail{
+    @include vp_min(767px){position: absolute;   width: 90%;}
+    padding:2%;
+    bottom: 0;
+    background-color: white;
+ 
+    left: 5%;
+            .txt-tab{border-bottom:2px solid black;padding:5px;}
+           & > .border{border:2px solid black;}
+            .heading{font-size:1.2em ;font-weight:bold;    margin: 0;}
+            .para{font-size:0.9em;padding-bottom:5px;margin:0;}
+            .prop-detail{.border{border: 0; border-left:2px solid black;font-weight:bold;}
+                         .col-xs-6{padding:15px 5px;}
+            }
+}
+
+
+
+        
+}
+
+
+
+.tile-container{background-color:#EEF3F9;padding:50px 15px;
+                .tile{margin:2% auto;}
+               .btn-containr  .btn-blue   {border-radius: 0; background: #173470; font-size: 16px; color: white; text-decoration: none; margin-top:2%;   padding:10px 35px;}
+   .img-cont{
+       position:relative;img{max-width:100%;}
+                         @include vp_fix(767px){    text-align: center;    border: 2px solid black;}
+    .feature{position: absolute; top: 5%; left: 5%; font-size: 10px; background: rgba(0,0,0,0.5); padding: 5px; color: white;}
+    .sale{position: absolute; right: 5%; top: 5%; color: black; background-color:#FED523; font-size: 10px; padding: 2% 3%;}
+    .price{position: absolute; right: 0; bottom: 0; padding: 2%; background-color: #243B87; color: white;}}
+
+
+   .txt-cont{background-color:white;padding: 15px;
+             .heading{    font-size: 1.5em;    font-weight: bold;}
+             .usp{color:grey;font-size:1em;}
+             .para{font-size:0.9em;}
+   }
+   .btn-cont{background-color:white;
+       .btn-blue   {border-radius: 0; background: #173470; font-size: 16px; color: white; text-decoration: none;    padding: 2% 35px;}
+         .btn-yellow{border-radius: 0; background: #B37D27; font-size: 16px; color: white; text-decoration: none;float:right;    padding: 2% 35px;}
+   }
+   
+}
+
+
+.agents-container{background-color:#EEF3F9;padding:50px 15px;
+                  .tile{margin:2% auto; 
+                       @include vp_fix(767px){text-align:center;   img{margin:auto;}}      img{max-width:100%;}}
+                  .txt-cont{text-align:center;  
+                            .heading{    font-weight: bold;    font-family: Roboto;}
+                             .para{color:gray;}
+                  }
+                  .detail{
+                    
+                          position: absolute; background:rgba(23, 52, 112,0.7);color:white;  bottom: 0;   width:calc(100% - 35px); padding:11px 25px;
+                          .heading{font-size:20px;font-weight:bold;margin-bottom: 0px;}
+                          .para{margin:0;}
+                  }
+}
+
+
+.bullet-slider{
+
+       padding: 50px 15px 75px;
+     .txt-cont{text-align:center;  margin:2% auto;
+                            .heading{    font-weight: bold;    font-family: Roboto;}
+                             .para{color:gray;}
+                  }
+    .carousel{   padding:50px 15px;}
+    .carousel-indicators li{    background-color:#B1B1B1;
+    border: 1px solid #B1B1B1;}
+    .carousel-indicators .active{    background-color:#1C3B77;
+    border: 1px solid #1C3B77;}
+    .carousel-indicators{    bottom: 0;}
+    .item{margin-bottom:25px; .col-sm-3{text-align:center;@include vp_fix(767px){margin:15px auto;}}}
+}

@@ -1,0 +1,68 @@
+/*=========================== media query mixin=================*/
+/*prefix*/
+/*prefix*/
+/*placeholder*/
+/* line 3, ../../scss/pages/contactus.scss */
+.map-container {
+  padding: 15px;
+}
+
+/* line 4, ../../scss/pages/contactus.scss */
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+@media (max-width: 767px) {
+  /* line 4, ../../scss/pages/contactus.scss */
+  #map {
+    height: 200px;
+  }
+}
+
+/* line 13, ../../scss/pages/contactus.scss */
+.contact-us {
+  padding: 50px 15px;
+  background-color: #173471;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#173471+0,354970+100 */
+  background: #173471;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #173471 0%, #354970 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #173471 0%, #354970 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #173471 0%, #354970 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#173471', endColorstr='#354970',GradientType=0 );
+  /* IE6-9 */
+}
+/* line 21, ../../scss/pages/contactus.scss */
+.contact-us .text-container {
+  color: white;
+}
+/* line 22, ../../scss/pages/contactus.scss */
+.contact-us .text-container img {
+  margin: 25px auto;
+}
+/* line 23, ../../scss/pages/contactus.scss */
+.contact-us .text-container .para {
+  margin: 25px 0;
+  font-weight: bold;
+}
+/* line 27, ../../scss/pages/contactus.scss */
+.contact-us .contact-us-form {
+  border-radius: 10px;
+  background-color: white;
+}
+/* line 29, ../../scss/pages/contactus.scss */
+.contact-us .contact-us-form .heading {
+  padding-left: 15px;
+}
+/* line 30, ../../scss/pages/contactus.scss */
+.contact-us .contact-us-form .para {
+  padding-left: 15px;
+}
+/* line 31, ../../scss/pages/contactus.scss */
+.contact-us .contact-us-form .form-control {
+  margin: 2% auto;
+}

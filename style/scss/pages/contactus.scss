@@ -1,0 +1,33 @@
+﻿
+    @import "../partials/mixing";
+    .map-container{padding:15px;}
+#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+        @include vp_fix(767px){height:200px;}
+      }
+
+
+
+.contact-us{    padding: 50px 15px; background-color:#173471;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#173471+0,354970+100 */
+background: #173471; /* Old browsers */
+background: -moz-linear-gradient(top, #173471 0%, #354970 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #173471 0%,#354970 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #173471 0%,#354970 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#173471', endColorstr='#354970',GradientType=0 ); /* IE6-9 */
+
+            .text-container{    color:white;
+                                img{    margin: 25px auto;}
+                                .para{    margin: 25px 0;font-weight:bold;}
+            }
+
+
+            .contact-us-form{    border-radius: 10px;
+               background-color:white;
+               .heading{    padding-left: 15px;}
+               .para{    padding-left: 15px;}
+               .form-control{margin:2% auto; @include placeholder{}}
+            }
+}

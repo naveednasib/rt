@@ -1,4 +1,7 @@
 <?php
+ class connection{
+
+ public	 function con(){
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,12 +15,34 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
+
+
+$conn->close();
+ }
+
+
+
+ 	 }
+ 	
 ?>
+
+
+
 
 
 
 <?php
 
+
+
+
+class developer  {
+
+
+
+	public  function getDevloperDetail()   {
+$connection = new connection();
+$con = $connection->con();
 $devName = $_POST['dev-name'];
 $devImg	 = $_POST['developer-img'];
 
@@ -25,7 +50,7 @@ $devImg	 = $_POST['developer-img'];
 
 $insertDev = "insert into tbl_project (project_developer,project_logo) values('$devName','$devImg')";
 
-if($conn->query($insertDev) === True){
+	if($con->query($insertDev) === True){
 	echo  "New record created successfully";
 }
  else{
@@ -45,9 +70,28 @@ if ($result->num_rows > 0) {
      while($row = $result->fetch_assoc()) {
          echo  $row["project_developer"].$row["project_logo"];
      }
-} else {
+} 
+else {
      echo "0 results";
 }
 
-$conn->close();
+
+	}
+
+
+
+}
+
+
+?>
+
+
+
+
+<?php
+
+
+$dev = new developer();
+
+$dev->getDevloperDetail();
 ?>

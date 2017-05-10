@@ -1,37 +1,8 @@
-<?php
- class connection{
-
- public	 function con(){
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "appelo";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-
-
-$conn->close();
- }
-
-
-
- 	 }
- 	
-?>
-
-
-
-
-
 
 <?php
+
+require 'connection.php';
+
 
 
 
@@ -40,58 +11,62 @@ class developer  {
 
 
 
-	public  function getDevloperDetail()   {
-$connection = new connection();
-$con = $connection->con();
-$devName = $_POST['dev-name'];
-$devImg	 = $_POST['developer-img'];
+function developer_insert_data(){
+
+    $devName = $_POST['dev-name'];
+    $devImg  = $_POST['developer-img'];
+
+    // $connection = new connection();
+  
+    // $connection->con();
+
+    // $test =  $connection->con();
+    // global  $conn;
+    // var_dump($conn);
+
+// Create connection
+          $servername = "localhost";
+          $username = "root";
+          $password = "";
+         $dbname = "appelo";
 
 
+         $conn = new mysqli($servername, $username, $password, $dbname);
 
-$insertDev = "insert into tbl_project (project_developer,project_logo) values('$devName','$devImg')";
-
-	if($con->query($insertDev) === True){
-	echo  "New record created successfully";
-}
- else{
-
- echo "Error:".$insertDev."<br>".$conn-->error;
-
- }
+        if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+                } 
 
 
-
-$getall = "select project_developer,project_logo from tbl_project";
-$result = $conn->query($getall) ;
+        $sql = "insert into tbl_project (project_developer,project_logo) values('$devName','$devImg')";
 
 
-if ($result->num_rows > 0) {
-     // output data of each row
-     while($row = $result->fetch_assoc()) {
-         echo  $row["project_developer"].$row["project_logo"];
-     }
-} 
-else {
-     echo "0 results";
-}
-
-
-	}
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully";
+                    } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+                            }
 
 
 
 }
 
 
-?>
+function save_images(){
+
+    
+}
+
+
+}
+
+$dev= new developer();
+$dev->developer_insert_data();
+
+// -------------------------------------------------
 
 
 
 
-<?php
 
-
-$dev = new developer();
-
-$dev->getDevloperDetail();
 ?>

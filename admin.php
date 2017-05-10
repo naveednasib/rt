@@ -272,6 +272,7 @@
 
 
           
+</form>
 
 
 
@@ -281,17 +282,19 @@
             <div class="col-xs-12 col-sm-6">
                 <h2>Unit Detail</h2>
 
+
+        <form action="php/unitdetail.php" method="post">
                 <table class="table table-striped table-responsive">
                     <tr>
                         <td><strong>Unit Name </strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Unit Name " />
+                            <input type="text" name="unit-name" class="form-control" placeholder="Unit Name " />
                         </td>
                     </tr>
                     <tr>
                         <td><strong>Location</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Location " />
+                            <input type="text" name="unit-loc" class="form-control" placeholder="Location " />
                         </td>
                     </tr>
 
@@ -299,7 +302,7 @@
                     <tr>
                         <td><strong>Prices</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Prices " />
+                            <input type="text" name="unit-prices" class="form-control" placeholder="Prices " />
                         </td>
                     </tr>
 
@@ -307,7 +310,7 @@
                     <tr>
                         <td><strong>Size</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Size " />
+                            <input type="text" name="unit-size" class="form-control" placeholder="Size " />
                         </td>
                     </tr>
 
@@ -316,7 +319,7 @@
                     <tr>
                         <td><strong>Ready By</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Ready By" />
+                            <input type="text"  name="unit-readyBy" class="form-control" placeholder="Ready By" />
                         </td>
                     </tr>
 
@@ -325,7 +328,7 @@
                     <tr>
                         <td><strong>Project Feature</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Project Feature" />
+                            <input type="text" name="unit-feature" class="form-control" placeholder="Project Feature" />
                         </td>
                     </tr>
 
@@ -333,7 +336,7 @@
                     <tr>
                         <td><strong>Facility & aminitues </strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Facility & aminitues" />
+                            <input type="text" name="unit-fac-ami" class="form-control" placeholder="Facility & aminitues" />
                         </td>
                     </tr>
 
@@ -341,7 +344,7 @@
                     <tr>
                         <td><strong>Map (Logintude & Latitude)</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Map (Logintude & Latitude) " />
+                            <input type="text" name="unit-map" class="form-control" placeholder="Map (Logintude & Latitude) " />
                         </td>
                     </tr>
 
@@ -349,7 +352,7 @@
                     <tr>
                         <td><strong>Video</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Video " />
+                            <input type="text" name="unit-video" class="form-control" placeholder="Video " />
                         </td>
                     </tr>
 
@@ -357,7 +360,7 @@
                     <tr>
                         <td><strong>Floor Plan</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Floor Plan" />
+                            <input type="text" name="unit-floorPlan" class="form-control" placeholder="Floor Plan" />
                         </td>
                     </tr>
 
@@ -366,7 +369,7 @@
                     <tr>
                         <td><strong>Sold</strong> </td>
                         <td class="form-group">
-                            <input type="text" class="form-control" placeholder="Sold " />
+                            <input type="text" name="unit-sold" class="form-control" placeholder="Sold " />
                         </td>
                     </tr>
 
@@ -390,7 +393,7 @@
                         </td>
                     </tr>
                 </table>
-
+</form>
 
 
             </div>

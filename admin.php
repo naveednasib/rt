@@ -16,6 +16,19 @@
         }
      
     </style>
+
+    <?php 
+
+    // $urld = "asd";
+
+
+    // setcookie( $urld ,$_POST['urld']);
+    // echo  $_COOKIE['urld'] ;
+
+ // Hello David!
+    ?>
+
+
 </head>
 <body>
     <!--header-->
@@ -250,7 +263,7 @@
                     <tr>
                         <td><strong>Developer Name </strong> </td>
                         <td class="form-group">
-                            <input type="text" name="dev-name" class="form-control" placeholder="Developer Name" />
+                            <input type="text" required="true" name="dev-name" class="form-control" placeholder="Developer Name" />
                         </td>
                     </tr>
                  
@@ -258,7 +271,7 @@
                       <tr>
                         <td><strong>Developer logo </strong> </td>
                         <td class="form-group">
-                            <input type="file" name="developer-img" class="form-control" placeholder="Developer Unit Name " />
+                            <input type="file" required="true" name="developer-img" class="form-control" placeholder="Developer Unit Name " />
                         </td>
                     </tr>
 

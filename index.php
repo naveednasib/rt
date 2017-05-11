@@ -10,6 +10,30 @@
     <title>Home page</title>
    
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+     <style>
+    .form-container      .select-option {padding:0 15px ;    height: 52px;}
+     </style>
+
+     <?php 
+
+
+      $servername = "localhost";
+          $username = "root";
+          $password = "";
+         $dbname = "appelo";
+
+
+         $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+                } 
+
+
+                $sql = "SELECT id,project_developer FROM tbl_project";
+                $selectresult = mysqli_query($conn, $sql);
+
+?>
  
 </head>
 <body>
@@ -246,7 +270,7 @@
             <div class="col-xs-12 col-sm-5">
               
 
-<form action="enquire.php" method="post">
+<form action="php/enquire.php" method="post">
                 <div class="form-container">
 
                     <div class="form-group">
@@ -259,15 +283,17 @@
                         <input type="email"  name="email" class="form-control" placeholder="Email Address">
                     </div>
                     <div class="form-group">
-                        <input type="number" name="phonenumber" class="form-control" placeholder="Phone Number">
+                        <input type="text" required="Number" name="phonenumber" class="form-control" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
+ 
+                        <select name="developerName" class="form-control select-option">
+            <?php   while($row1 = mysqli_fetch_array($selectresult)):; ?>
 
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                            <option value="<?php echo $row1[0];?>"><?php echo $row1[1] ?></option>
+
+                            <?php  endwhile; ?>
+                       
                         </select>
                     </div>
                     <div class="form-group">

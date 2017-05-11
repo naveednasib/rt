@@ -12,19 +12,6 @@ class developer  {
 
 
 function developer_insert_data(){
-
-    $devName = $_POST['dev-name'];
-    $devImg  = $_POST['developer-img'];
-
-    // $connection = new connection();
-  
-    // $connection->con();
-
-    // $test =  $connection->con();
-    // global  $conn;
-    // var_dump($conn);
-
-// Create connection
           $servername = "localhost";
           $username = "root";
           $password = "";
@@ -37,12 +24,43 @@ function developer_insert_data(){
         die("Connection failed: " . $conn->connect_error);
                 } 
 
+ // $url = $_COOKIE['url'];
+    // echo $url; 
 
-        $sql = "insert into tbl_project (project_developer,project_logo) values('$devName','$devImg')";
+    // $connection = new connection();
+  
+    // $connection->con();
+
+    // $test =  $connection->con();
+    // global  $conn;
+    // var_dump($conn);
+
+// Create connection
+
+    $devName = $_POST['dev-name'];
+    $devImg  = $_POST['developer-img'];
+    $devImg =  isset($devImg);
+    $devName=  isset( $devName);
+    if(  $devImg &&  $devName ){
+
+         $sql = "insert into tbl_project (project_developer,project_logo) values('$devName','$devImg')";
 
 
             if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully";
+              echo "<script>
+            alert('data insert');
+
+            </script>";
+    }
+
+
+
+       else{
+         echo "you enter invalid data ";
+       }
+
+
+// header("Location: /index.php");
                     } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
                             }

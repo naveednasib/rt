@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head >
 
@@ -30,8 +30,12 @@
                 } 
 
 
-                $sql = "SELECT id,project_developer FROM tbl_project";
+                $sql = "SELECT id,project_developer FROM tbl_projects";
                 $selectresult = mysqli_query($conn, $sql);
+
+
+                $fetch_unit_detail ="SELECT * FROM tbl_unitdetail";
+                $unitresult = mysqli_query($conn, $fetch_unit_detail );
 
 ?>
  
@@ -111,6 +115,9 @@
                                     <!--slider navigation container-->
                                     <li class="property-slider-nav col-sm-9 col-xs-12 ">
                                         <div class="col-xs-12"><h5 class="heading">PROPERTIES LIST</h5></div>
+                                      
+
+
                                         <div id="nav-slider" class="carousel paddingZ col-xs-12 slide nav-slider" data-interval="false" data-ride="carousel">
                                             <!-- Indicators -->
                                             <!-- Wrapper for slides -->
@@ -497,23 +504,36 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
     <!--tile container-->
     <section class="tile-container">
         <div class="mid-container clearfix">
+            
+
+
+
             <!--tile-->
+            <?php   while($rowUnit = mysqli_fetch_array($unitresult)):; ?>
+
             <div class="col-xs-12 col-sm-4 tile">
                 <div class="img-cont">
 
                     <img src="images/feature-img.jpg" />
                     <span class="feature">Featured</span>
                     <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
+                    <span class=" price"><?php echo $rowUnit[3] ?> Per Month</span>
                 </div>
 
                 <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
+                    <h4 class="heading"><?php echo $rowUnit[1] ?></h4>
+                    <p class="usp"><?php echo $rowUnit[2] ?> </p>
+                    <p class="para"><?php echo $rowUnit[6] ?></p>
                 </div>
 
 
@@ -522,192 +542,13 @@
                     <a href="#" class="btn btn-yellow">Register Your interest</a>
                 </div>
             </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
 
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
+              <?php  endwhile; ?>
 
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
-
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
-
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
-
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
-
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
-
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
-
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
-
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
-
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
-
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
-
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
-
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
-
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
-            <!--tile-->
-            <!--tile-->
-            <div class="col-xs-12 col-sm-4 tile">
-                <div class="img-cont">
-
-                    <img src="images/feature-img.jpg" />
-                    <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
-                    <span class=" price">$8600 Per Month</span>
-                </div>
-
-                <div class="txt-cont">
-                    <h4 class="heading">Park Avenue Apartment</h4>
-                    <p class="usp">Lorem ipsum dolor sit amet, consectetur </p>
-                    <p class="para">nonummy nibh tempor cum solutax eleifend option nihil imperdiet doming…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifending…nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option nihil imperdiet doming…</p>
-                </div>
-
-
-                <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
-                </div>
-            </div>
             <!--tile-->
 
+
+         
 
 
             <div class="col-xs-12 text-center btn-containr">

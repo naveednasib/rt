@@ -39,9 +39,8 @@ function developer_insert_data(){
 
     $devName = $_POST['dev-name'];
     $devImg  = $_POST['developer-img'];
-    $devImg =  isset($devImg);
-    $devName=  isset( $devName);
-    if(  $devImg &&  $devName ){
+  
+    if(   isset($devImg) &&  $devName ){
 
          $sql = "insert into tbl_project (project_developer,project_logo) values('$devName','$devImg')";
 

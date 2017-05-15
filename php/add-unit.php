@@ -1,18 +1,7 @@
 <?php 
 
 
-      $servername = "localhost";
-          $username = "root";
-          $password = "";
-         $dbname = "appelo";
-
-
-         $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-                } 
-
+        include_once('../connection.php');
                 
 
  		$unitname                                =  $_POST['unit-name'];
@@ -52,10 +41,11 @@
 
  		
 
-   if ($conn->query($sql) === TRUE) {
-                echo "New unit detail";
-                    } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-                            }
+                if ($conn->query($sql) === TRUE) {
+                                     echo "New unit detail";
+                                       } 
+                    else              {
+                                     echo "Error: " . $sql . "<br>" . $conn->error;
+                                      }
 
 ?>

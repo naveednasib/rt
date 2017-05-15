@@ -1,22 +1,9 @@
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-   $dbname = "appelo";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-?>
 
 
 <?php
+
+include_once('connection.php');
 
 $firstname 		 =  $_POST['firstname'];
 $lastname 		 =  $_POST['lastname'];

@@ -178,37 +178,9 @@
                     </tr>
 
 
-                    <tr>
-                        <td><strong>Facility & aminitues </strong> </td>
-                        <td class="form-group">
-                            <input type="text" required name="unit-fac-ami" class="form-control" placeholder="Facility & aminitues" />
-                        </td>
-                    </tr>
+              
 
-
-                    <tr>
-                        <td><strong>Map (Logintude & Latitude)</strong> </td>
-                        <td class="form-group">
-                            <input type="text" required name="unit-map" class="form-control" placeholder="Map (Logintude & Latitude) " />
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td><strong>Video</strong> </td>
-                        <td class="form-group">
-                            <input type="text" required name="unit-video" class="form-control" placeholder="Video " />
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td><strong>Floor Plan</strong> </td>
-                        <td class="form-group">
-                            <input type="text" required name="unit-floorPlan" class="form-control" placeholder="Floor Plan" />
-                        </td>
-                    </tr>
-
+                  
 
 
                     <tr>
@@ -218,12 +190,30 @@
                         </td>
                     </tr>
 
-    <tr>
+                     <tr>
                         <td><strong>Unit type</strong> </td>
                         <td class="form-group">
                             <input type="text" required name="unit-type" class="form-control" placeholder="unit type" />
                         </td>
                     </tr>
+
+
+                         <tr>
+                        <td><strong>Number of Bedrooms</strong> </td>
+                        <td class="form-group">
+                            <input type="text" required name="unit-bedrooms" class="form-control" placeholder="Add Bedrooms" />
+                        </td>
+                    </tr>
+
+
+
+ <tr>
+                        <td><strong>Number of Bathrooms</strong> </td>
+                        <td class="form-group">
+                            <input type="text" required name="unit-bathrooms" class="form-control" placeholder="Bedrooms" />
+                        </td>
+                    </tr>
+
 
 
 

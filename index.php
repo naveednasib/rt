@@ -74,7 +74,7 @@
                     <div class="form-group">
  
                         <select name="developerName" class="form-control select-option">
-            <?php   while($row1 = mysqli_fetch_array($selectresult)):; ?>
+                      <?php   while($row1 = mysqli_fetch_array($selectresult)):; ?>
 
                             <option value="<?php echo $row1[0];?>"><?php echo $row1[1] ?></option>
 
@@ -300,13 +300,39 @@
             <!--tile-->
             <?php   while($rowUnit = mysqli_fetch_array($unitresult)):; ?>
 
-            <div class="col-xs-12 col-sm-4 tile">
+                    
+                    <?php
+                   
+
+                   $fetch_One_Img =
+                   "SELECT images_path FROM tbl_unit_sm_img WHERE unit_id =  $rowUnit[0]  LIMIT 1 ";
+           
+                   $imgquery = mysqli_query($conn,$fetch_One_Img);
+                 
+             
+                        if ( $imgquery->num_rows > 0) {
+
+                             while($row3 =  $imgquery->fetch_assoc()) {                    
+                            $nid=$row3['images_path']; //Here is where the single value is stored.
+                             $nid=str_replace('../','',$nid);
+                                 }
+                                    } else {
+                                 echo "0 results";
+
+                              $nid = 'images/image-not-found.png' ;
+                                 }
+                  
+                   ?> 
+
+
+         
+            <div  class="col-xs-12 col-sm-4 tile" <?php echo  $rowUnit[0] ?> >
                 <div class="img-cont">
 
-                    <img src="images/feature-img.jpg" />
+                    <img src="<?php echo $nid?>" />
                     <span class="feature">Featured</span>
                     <span class="sale">For Sale</span>
-                    <span class=" price"><?php echo $rowUnit[3] ?> Per Month</span>
+                    <span class=" price"><?php echo $rowUnit[3] ?> </span>
                 </div>
 
                 <div class="txt-cont">
@@ -317,7 +343,7 @@
 
 
                 <div class="btn-cont">
-                    <a href="#" class="btn  btn-blue">Detail</a>
+                    <a href="unitdetail.php?id=<?php echo $rowUnit[0] ?>"  class="btn  btn-blue">Detail</a>
                     <a href="#" class="btn btn-yellow">Register Your interest</a>
                 </div>
             </div>

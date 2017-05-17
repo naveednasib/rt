@@ -19,9 +19,11 @@
               <ul class="dropdown-menu">
                 <li><a href="add-unit.php">Add unit</a></li>
                <!--  <li><a href="#">add thumbnail</a></li> -->
-               <li><a href="add-lg-images.php">Add large images</a></li>
-               <li><a href="add-sm-images.php">Add small images</a></li>
-                
+               <li><a href="add-lg-images.php">Add large images         </a></li>
+               <li><a href="add-sm-images.php">Add small images         </a></li>
+               <li><a href="add-video.php">Add video                </a></li>
+               <li><a href="add-map-location.php">Add map location         </a></li>
+               <li><a href="add-faciltyaminites.php">Add Facilty & aminities  </a></li>
               </ul>
             </li>
 
@@ -32,7 +34,7 @@
               <ul class="dropdown-menu">
                 <li><a href="#">Header Slider</a></li>
                 <li><a href="#">Large slider</a></li>
-                <li><a href="#">Add Tiles</a></li>
+                <li><a href="add-home-tiles.php">Add home Tiles</a></li>
                 
               </ul>
             </li>

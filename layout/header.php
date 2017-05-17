@@ -49,7 +49,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/index.html">Home</a></li>
+                            <li class="active"><a href="/">Home</a></li>
                             <li class="dropdown sliding-nav-container parent-nav">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dubai Projects <span class="caret"></span></a>
                                 <ul class=" slilding-nav child-nav">
@@ -201,9 +201,9 @@
 
                                 </ul>
                             </li>
-                            <li><a href="/unitdetail.html">Developers</a></li>
+                           <!--  <li><a href="/unitdetail.html">Developers</a></li> -->
                             <li><a href="#">About Us </a></li>
-                            <li><a href="/contactus.html">Contact Us</a></li>
+                            <li><a href="contactus.php">Contact Us</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right search-input">
                             <li class="form-group">

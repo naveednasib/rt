@@ -55,7 +55,7 @@ include_once('connection.php');
                      $row = mysqli_fetch_array($selectresult);
                         
                          if ( $row[0] == $devName) {
-                      echo '<h3 style="color:red;">this name exit</h3>' ;
+                      echo '<h3  style="color:red;margin-top:100px;" >this name exit</h3>' ;
                       
                         }
 
@@ -94,7 +94,7 @@ include_once('connection.php');
   <!--header-->
         <?php  
                 include_once('layout/cms-header.php');
-        ?>
+                  ?>
         <!--header-->
 
     <section class="datasets top-container">

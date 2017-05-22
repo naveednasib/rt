@@ -15,6 +15,13 @@
      <style>
     .form-container      .select-option {padding:0 15px ;    height: 52px;}
     .property-detail-wraper {     background-image: url(images/unit-detail-bg.jpg);}
+table{ empty-cells: hide;}
+
+  #map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
      </style>
 
      <?php 
@@ -30,14 +37,23 @@
 
                
                  $fetch_lg_Img =    "SELECT images_path FROM tbl_unit_lg_img WHERE unit_id =    $id  ";
-           
                  $img_lg_query = mysqli_query($conn,$fetch_lg_Img);
 
 
-                $fetch_sm_Img ="SELECT images_path FROM tbl_unit_sm_img WHERE unit_id =    $id  ";
-           
+                $fetch_sm_Img ="SELECT images_path FROM tbl_unit_sm_img WHERE unit_id =    $id  ";           
                 $img_sm_query = mysqli_query($conn,$fetch_sm_Img);
+
+
+                $fetch_paymentplan ="select * from tbl_payment_plan where unit_id='$id'";
+                $paymentplan_query = mysqli_query($conn,$fetch_paymentplan);
+
+                $fetch_media ="select * from tbl_unit_media where unit_id='$id'";
+                $media_query = mysqli_query($conn, $fetch_media);
+
+
+
 ?>
+
  
 </head>
 <body>
@@ -121,12 +137,32 @@
 
 
 
+   <?php   while($get_media = mysqli_fetch_array( $media_query)):;         ?>
+
+            <div class=" col-xs-12  am-div col-sm-4">
+            <?php
+                $brochure = $get_media[2]; 
+               $brochure = str_replace('../','', $brochure );    
+            ?>
+            <a href="<?php  echo $brochure?>" download>
+            <span><i class="glyphicon glyphicon-save-file"></i>Download Brochure</span></a></div>
 
 
-            <div class=" col-xs-12  am-div col-sm-4"><a href="#" download><span><i class="glyphicon glyphicon-save-file"></i>Download Brochure</span></a></div>
-             <div class="col-xs-12 am-div col-sm-4"><a href="#" download><span><i class="glyphicon glyphicon-save-file"></i>Download Payment Plan</span></a></div>
-             <div class="col-xs-12 am-div col-sm-4"><a href="#" download><span><i class="glyphicon glyphicon-save-file"></i>Download FloorPlan</span></a></div>
-     
+             <div class="col-xs-12 am-div col-sm-4">
+             <?php
+                $paymentplan = $get_media[3]; 
+               $paymentplan = str_replace('../','', $paymentplan );    
+            ?>
+             <a href="<?php  echo  $paymentplan ?>" download><span><i class="glyphicon glyphicon-save-file"></i>Download Payment Plan</span></a></div>
+
+
+             <div class="col-xs-12 am-div col-sm-4">
+            <?php
+                $floorplan = $get_media[4]; 
+               $floorplan = str_replace('../','', $floorplan );    
+            ?>
+             <a href="<?php echo $floorplan ?>" download><span><i class="glyphicon glyphicon-save-file"></i>Download FloorPlan</span></a></div>
+         <?php  endwhile; ?>
 
 
         </div>
@@ -199,51 +235,57 @@
 
 
                <div class="col-xs-12 col-sm-6 ">
-                         <h2><strong>QUICK SUMMARY</strong></h2>
+                         <h2><strong>PAYMENT PLAN</strong></h2>
+             
+             <?php   while($payment = mysqli_fetch_array($paymentplan_query)):; ?>
                 <table class="table table-striped table-responsive">
-                    <tr>
-                        <td class="text-left"><strong>Property Id</strong></td>
-                        <td class="text-right">5456</td>
-                        
-                    </tr>
+                   
 
-                      <tr>
-                        <td class="text-left"><strong>Price</strong></td>
-                        <td class="text-right">$8,600 / month</td>
-                        
-                    </tr>
+                 
+                <tr>
+                <td><?php echo  $payment[10] ?>                     </td>
+                <td><?php echo  $payment[2] ?>                      </td>
+                <td><?php echo  $payment[3] ?>                      </td>
+                </tr>
 
+                <tr>
+                <td><?php echo  $payment[4] ?>                     </td>
+                <td><?php echo  $payment[5] ?>                      </td>
+                <td><?php echo  $payment[6] ?>                      </td>
+                </tr>
 
-                      <tr>
-                        <td class="text-left"><strong>Property Size</strong></td>
-                        <td class="text-right">5,500 ft2</td>
-                        
-                    </tr>
+                <tr>
+                <td><?php echo  $payment[7] ?>                     </td>
+                <td><?php echo  $payment[8] ?>                      </td>
+                <td><?php echo  $payment[9] ?>                      </td>
+                </tr>
 
+                <tr>
+                <td><?php echo  $payment[11] ?>                     </td>
+                <td><?php echo  $payment[12] ?>                      </td>
+                <td><?php echo  $payment[13] ?>                      </td>
+                </tr>
+                
+                
 
-                      <tr>
-                        <td class="text-left"><strong>Bedrooms</strong></td>
-                        <td class="text-right">5</td>
-                        
-                    </tr>
-
-
-                      <tr>
-                        <td class="text-left"><strong>Bathrooms</strong></td>
-                        <td class="text-right">3</td>
-                        
-                    </tr>
-
-
-                      <tr>
-                        <td class="text-left"><strong>Available From</strong></td>
-                        <td class="text-right">22-04-2017</td>
-                        
-                    </tr>
                 </table>
+
+               <?php  endwhile; ?>    
             </div>
 
         </div>
+
+
+<section class="map-container ">
+
+    <div class="mid-container clearfix">
+
+        <div class="col-xs-12"> <div id="map"></div></div>
+        
+
+    </div>
+
+</section>
 
 
 
@@ -268,7 +310,9 @@
 
 
             <div class="agent-img col-sm-4 col-xs-12 paddingL">
-                <img src="/../../../images/agent-one.jpg" /></div>
+               
+
+               </div>
 
             <div class="agent-detail-txt col-sm-4 col-xs-12">
                 <h3>Bohdan Kononets</h3>
@@ -329,11 +373,8 @@
                     </div>
                     <div class="form-group">
 
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                        <select class="form-control select-option">
+                         <option value="<?php echo $row1[1];?>"><?php echo $row1[1];?></option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -348,7 +389,7 @@
 
         </div>
     </section>
-   <?php  endwhile; ?>
+  
 
 
     <!--footer-->
@@ -382,7 +423,7 @@
                 }
             });
             $('#single-slider').owlCarousel({
-                loop: true,
+                
                 margin: 10,
                 nav: false,
                 responsive: {
@@ -403,6 +444,34 @@
 
     </script>
 
+<?php 
+
+                $fetch_map =    "select * from tbl_unit_map where unit_id='$id'";
+                $map_query =    mysqli_query($conn, $fetch_map);
+                $map_query =    mysqli_fetch_array($map_query); 
+                $logitude  =    $map_query[2];
+                $latitude  =    $map_query[3];  
+
+?>
+
+ <script>
+     function initMap() {
+         var uluru = { lat: <?php echo $latitude ?>, lng: <?php echo $logitude ?> };
+         var map = new google.maps.Map(document.getElementById('map'), {
+             zoom: 14,
+             center: uluru
+         });
+         var marker = new google.maps.Marker({
+             position: uluru,
+             map: map
+         });
+     }
+    </script>
+
+ <?php  endwhile; ?>
+
+     <script async defer    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDozcm4BObnYJBHVQFZiIFgYgDcTQwADfI&callback=initMap">
+    </script>
 
 </body>
 </html>

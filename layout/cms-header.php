@@ -24,6 +24,8 @@
                <li><a href="add-video.php">Add video                </a></li>
                <li><a href="add-map-location.php">Add map location         </a></li>
                <li><a href="add-faciltyaminites.php">Add Facilty & aminities  </a></li>
+               <li><a href="add-payment-plan.php">Add payment plan</a></li>
+                <li><a href="add-unit-media.php">Add Unit media</a></li>
               </ul>
             </li>
 
@@ -74,4 +76,4 @@
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{  background-color: white;}
-    </style>>
+    </style>

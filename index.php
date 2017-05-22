@@ -21,7 +21,7 @@
 
 
 
-                $sql = "SELECT id,project_developer FROM tbl_projects";
+                $sql = "SELECT * FROM tbl_unitdetail";
                 $selectresult = mysqli_query($conn, $sql);
 
 
@@ -56,6 +56,86 @@
             <div class="col-xs-12 col-sm-5">
               
 
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<section class="form-serach">
+        <div class="clearfix mid-container">
+
+  <div class="col-xs-12 col-sm-7">
+      <h2 class="heading">Latest Off Plan Projects In Dubai </h2>
+      <p class="parang">Neque porro quisquam est qui dolorem ipNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit 
+      Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..
+      </p>
+
+      <h5 class="heading5">Now Its Easy To  Find Your Future Home In Dubai </h3>
+      <h2 class="headingy">Find All Latest Off PLan Project In Dubai </h2>
+
+
+
+        <div class="search-box clearfix">
+        
+                <div class="col-xs-12 col-sm-10" class="form-group">
+                <input type="text" class="form-control" Placeholder="search properties by name ,Developer name or location">
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <a class="btn btn-success" href="listing-unit.php">Search</a>
+                </div>
+
+
+
+                <div class="filter-search clearfix col-xs-12 paddingZ">
+                <div class="col-xs-12 col-sm-3 form-group">
+                    <select class="form-control">
+                        <option>Category</option>
+                    </select>
+                </div>
+
+
+                    <div class="col-xs-12 col-sm-3 form-group paddingZ ">
+                <div class="input-group ">
+                     <span class="input-group-addon">AED</span>
+                         <input type="text" class="form-control"  placeholder="min price">
+                </div>
+                    </div>
+
+              <div class="col-xs-12 col-sm-3 paddingZ form-group">
+                    <div class="input-group">
+                     <span class="input-group-addon">AED</span>
+                      <input  type="text" class="form-control"   placeholder="min price"/>
+                </div>
+                 </div>
+
+
+
+                 <div class="col-xs-12 col-sm-3 form-group">
+                   <select class="form-control">
+                        <option>Category</option>
+                    </select>
+                 </div>
+
+
+
+
+
+
+        </div>
+
+
+
+  </div>
+ </div>
+          <div class="col-xs-12 col-sm-5">
+              
+
 <form action="php/enquire.php" method="post">
                 <div class="form-container">
 
@@ -74,7 +154,7 @@
                     <div class="form-group">
  
                         <select name="developerName" class="form-control select-option">
-                      <?php   while($row1 = mysqli_fetch_array($selectresult)):; ?>
+                      <?php   while($row1 = mysqli_fetch_array( $selectresult)):; ?>
 
                             <option value="<?php echo $row1[0];?>"><?php echo $row1[1] ?></option>
 
@@ -91,9 +171,10 @@
 
 
                 </div>
-            </div>
-        </div>
-    </section>
+ </div>
+  </section>
+
+
 
     <!--slider container-->
     <section class="slilder-container">
@@ -317,7 +398,7 @@
                              $nid=str_replace('../','',$nid);
                                  }
                                     } else {
-                                 echo "0 results";
+                              
 
                               $nid = 'images/image-not-found.png' ;
                                  }

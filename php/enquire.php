@@ -3,7 +3,7 @@
 
 <?php
 
-include_once('connection.php');
+	include_once('../connection.php');
 
 $firstname 		 =  $_POST['firstname'];
 $lastname 		 =  $_POST['lastname'];
@@ -18,6 +18,7 @@ $developerName 	 =  $_POST['developerName'];
 
 
 
+                $selectresult = mysqli_query($conn, $sql);
 
 
 if ($conn->query($sql) === TRUE) {
@@ -31,7 +32,7 @@ $msg = wordwrap($msg,70);
 
 $headers = "From: webmaster@example.com" . "\r\n" .
 // send email
-$varf = mail( $email + ",mnnasib7777@gmail.com","test",$msg,$headers);
+$varf = mail( $email + ",mnnasib7777@gmail.com","test",$msg);
 
 
 } else {

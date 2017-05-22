@@ -17,6 +17,49 @@
      </style>
 
   
+
+
+<?php 
+include_once("connection.php");
+session_start();
+if(isset($_POST['login']) )
+{
+    $user = $_POST['userid'];
+    $pass = $_POST['user_password'];
+
+    $checkquery = "  SELECT * FROM  tbl_admin_user WHERE username = '$user' AND user_password = '$pass';  ";
+
+    $result = mysqli_query($conn,$checkquery );
+
+    if(mysqli_num_rows($result)==1){
+        $_SESSION['username'] =  $user;
+              echo  $user;
+            
+
+
+                $cookie_name = "user";
+                $cookie_value = "John Doe";
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+                              if(!isset($_COOKIE[$cookie_name])) {
+                               echo "Cookie named '" . $cookie_name . "' is not set!";
+                                 } else {
+                                       echo "Cookie '" . $cookie_name . "' is set!<br>";
+                                       echo "Value is: " . $_COOKIE[$cookie_name];
+                                          }
+
+    }
+        else {
+            echo "account is in valid ";
+
+        }
+}
+  
+
+
+
+?>
+
  
 </head>
 <body>
@@ -29,6 +72,37 @@
         ?>
         <!--header-->
 
+
+
+
+<section class="top-container">
+
+<div class="mid-container">
+<h2>Login</h2>
+
+
+<form action="admin.php" method="POST">
+<table class="table">
+    <tr>
+        <td><label>User Name </label></td>
+        <td><input class="form-control" type="text" name="userid"/></td>
+
+    </tr>
+     <tr>
+        <td><label>Password </label></td>
+        <td><input  class="form-control"  type="password" name="user_password"/></td>
+
+    </tr>
+     <tr>
+       
+        <td colspan="2"><input  class="btn btn-success" value="submit"  type="submit" name="login"/></td>
+
+    </tr>
+</table>
+</form>
+</div>
+
+</section>
 
 
   

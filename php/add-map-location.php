@@ -1,74 +1,55 @@
-
 <?php
-        
-        include_once('../connection.php');
-        $unit_Id                        = $_POST["unitId"];
-        $unit_Name                      = $_POST["unitname"];
 
 
 
 
-            $createFolder   = "../images/unitimages/small/".$unit_Id ."/";
-            
-            if (!file_exists($createFolder)) {          
-             mkdir($createFolder);
 
+  include_once("../connection.php");
+                   $unit_id        =       $_POST['unitId'];
+                   $unit_longitude =       $_POST['unit_longitude'];
+                   $unit_latitude  =       $_POST['unit_latitude'];
 
-               if(isset($_POST['upload-images']))
-                    {    
-
-                     for($i=0;$i<count($_FILES["file_img"]["name"]);$i++){
-
-                         $filetmp    = $_FILES["file_img"]["tmp_name"][$i];
-                         $filename   = $_FILES["file_img"]["name"][$i];
-                         $filetype   = $_FILES["file_img"]["type"][$i];
-                         $filepath   = $createFolder.$filename;
-
-                           if (!file_exists($filepath)) { 
-                           move_uploaded_file($filetmp , $filepath );
-
-                          $insertImage = " INSERT INTO tbl_unit_sm_img(unit_id,images_path) VALUES ('$unit_Id','$filepath') ";
-
-                          $result = mysqli_query($conn,$insertImage);
-                         
-                          echo '<h3 style="color:green;">image = '.$filename .' Added</h3>' ;
-                           }
-
-                           else{
-                            echo "files exits";
-                           }
-                     
-                    }
-                    }
-                    }
-
-                    else{
-                        for($i=0;$i<count($_FILES["file_img"]["name"]);$i++){
-
-                         $filetmp    = $_FILES["file_img"]["tmp_name"][$i];
-                         $filename   = $_FILES["file_img"]["name"][$i];
-                         $filetype   = $_FILES["file_img"]["type"][$i];
-                         $filepath   = "../images/unitimages/small/".$unit_Id ."/".$filename;
-
-                           if (!file_exists($filepath)) {
-                          move_uploaded_file($filetmp , $filepath );
-
-                          $insertImage = " INSERT INTO tbl_unit_sm_img(unit_id,images_path) VALUES ('$unit_Id','$filepath') ";
-
-                          $result = mysqli_query($conn,$insertImage);
-                         
-                         echo '<h3 style="color:green;">image = '.$filename .' Added</h3>' ;
-                       }
-                       else{
-                            echo "files exits";
-                           }
-
-                    }
-
-                    }
-
-     
-
+         
        
+                 $updateMap        =        ''; 
+                 $id_exit          =        "SELECT * FROM tbl_unit_map WHERE unit_id = '$unit_id'  ";
+                 $id_exit_query    =        mysqli_query($conn,$id_exit);
+        
+
+
+
+
+
+
+
+        
+        if ( $id_exit_query->num_rows == 0) {
+
+
+                    $insertMap ="insert into tbl_unit_map (unit_id,unit_longitude,unit_latitude) value(' $unit_id ','$unit_longitude','$unit_latitude')";
+                     $query =mysqli_query($conn, $insertMap);
+                       echo "data insert....";
+
+           
+                    
+        } else {
+                   
+
+                    $updateMap ="update  tbl_unit_map set 
+                     unit_longitude='$unit_longitude',unit_latitude='$unit_latitude'
+                    where  unit_id='$unit_id'
+                     ";
+                  
+                     $update_query =mysqli_query($conn, $updateMap);
+                    
+                     echo "data update....";
+                
+        }
+
+
+        
+
+
+
 
 ?>

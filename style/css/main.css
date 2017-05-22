@@ -994,3 +994,18 @@ body {
 * {
   /*border:1px solid red;*/
 }
+
+
+
+.form-serach{background-color:#EEF2FB;    padding: 50px;}
+.form-serach .heading{    color: #032354;    font-weight: bold;}
+.form-serach .parang{   font-size: 16px;       color: #2C2D32;}
+.form-serach .heading5{     font-size: 20px;       color: #2C2D32;    padding-top: 15px;}
+.form-serach .headingy{    font-size: 20px;       color: #78632A;}
+
+
+.search-box{    background-color: rgba(0,0,0,0.8);;padding:15px 0;}
+.search-box .form-control{border-radius: 0;}
+.search-box .btn{width:100%;}
+.filter-search {    padding: 15px 10px 0;}
+.filter-search .col-xs-12{padding: 5px;}

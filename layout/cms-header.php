@@ -1,3 +1,8 @@
+
+
+
+
+
 <nav class="navbar cms-header navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -43,7 +48,12 @@
              <li><a href="view-enquiry.php">Enqury</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Sign Out</a></li>
+            <li>
+                <form action="admin.php" method="POST">
+            <input type="submit"  value ="Sign Out" name="signout">
+              </form>
+
+            </li>
           
           
           </ul>

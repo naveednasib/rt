@@ -21,7 +21,14 @@
 
 <?php 
 include_once("connection.php");
-session_start();
+     ob_start();
+    session_start();
+    
+
+if(empty($_SESSION["username"]) && empty($_SESSION["password"]) ){
+// header('Refresh: 2; URL = admin.php');
+}
+
 if(isset($_POST['login']) )
 {
     $user = $_POST['userid'];
@@ -29,38 +36,57 @@ if(isset($_POST['login']) )
 
     $checkquery = "  SELECT * FROM  tbl_admin_user WHERE username = '$user' AND user_password = '$pass';  ";
 
-    $result = mysqli_query($conn,$checkquery );
+       $result       =   mysqli_query($conn,$checkquery );
+       $rower        =   mysqli_fetch_array( $result);  
+       $username     =   $rower[1];
+       $userpassword =   $rower[2];
+       $msg          =   '';
 
-    if(mysqli_num_rows($result)==1){
-        $_SESSION['username'] =  $user;
-              echo  $user;
-            
+            if (isset($_POST['login']) && !empty($user) && !empty($pass)) {
+         
+               if ( $user ==   $username &&   $pass == $userpassword ) {
+                  $_SESSION['valid'] = true;
+                  $_SESSION['timeout'] = time();
+                  $_SESSION['username'] = '$user';
+                  
+                 include_once('layout/cms-header.php');
+               }
 
 
-                $cookie_name = "user";
-                $cookie_value = "John Doe";
-                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 
-                              if(!isset($_COOKIE[$cookie_name])) {
-                               echo "Cookie named '" . $cookie_name . "' is not set!";
-                                 } else {
-                                       echo "Cookie '" . $cookie_name . "' is set!<br>";
-                                       echo "Value is: " . $_COOKIE[$cookie_name];
-                                          }
+               else {
+                  $msg = 'Wrong username or password';
 
-    }
-        else {
-            echo "account is in valid ";
+                  echo  $msg;
+               }
+            }
 
-        }
 }
   
+
+
+
 
 
 
 ?>
 
  
+
+   <?php
+
+
+   if(isset($_POST['signout']) ){
+   unset($_SESSION["username"]);
+   unset($_SESSION["password"]);
+   
+   echo 'You have cleaned session';
+   // header('Refresh: 2; URL = admin.php');
+   }
+
+
+   
+?>
 </head>
 <body>
 
@@ -68,7 +94,7 @@ if(isset($_POST['login']) )
 
         <!--header-->
         <?php  
-                include_once('layout/cms-header.php');
+              
         ?>
         <!--header-->
 

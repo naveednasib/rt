@@ -853,6 +853,11 @@ body:not(.woocommerce-page) {
 /* line 69, ../scss/partials/wide-slider.scss */
 .tile-container .txt-cont .para {
   font-size: 0.9em;
+
+
+    height: 53px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /* line 71, ../scss/partials/wide-slider.scss */
 .tile-container .btn-cont {

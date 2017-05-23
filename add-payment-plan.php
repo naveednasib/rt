@@ -43,6 +43,8 @@
                         $payment_plan10 = $_POST['payment_10'];
                         $payment_plan11 = $_POST['payment_11'];
                         $payment_plan12 = $_POST['payment_12'];
+                        $payment_plan11 = $_POST['payment_13'];
+                        $payment_plan12 = $_POST['payment_14'];
                         
                       
                         $check_unitid = "select * from tbl_payment_plan where unit_id =  $unit_id  ";
@@ -68,7 +70,10 @@
                             payment_1  =['$payment_plan10'], 
                             payment_10 =['$payment_plan1'], 
                             payment_11 =['$payment_plan11'], 
-                            payment_12 =['$payment_plan12'] 
+                            payment_12 =['$payment_plan12'],
+                            payment_13 =['$payment_plan13'], 
+                            payment_14 =['$payment_plan14'] 
+                            payment_15 =['$payment_plan15']   
                             WHERE '$unit_id'";
                             $inset_query = mysqli_query($conn, $insert_payment);
                             echo "<h3 style='margin-top:50px'>data Updated</h3>";
@@ -78,7 +83,7 @@
 
                         $insert_payment = " INSERT INTO  
                         tbl_payment_plan
-                         (  unit_id ,  payment_2 ,  payment_3 ,  payment_4 ,  payment_5 ,  payment_6 ,  payment_7 ,  payment_8 ,  payment_9 ,  payment_1 ,  payment_10 ,  payment_11 ,  payment_12 ) 
+                         (  unit_id ,  payment_2 ,  payment_3 ,  payment_4 ,  payment_5 ,  payment_6 ,  payment_7 ,  payment_8 ,  payment_9 ,  payment_1 ,  payment_10 ,  payment_11 ,  payment_12,payment_13,payment_14,payment_15 ) 
                          VALUES 
                          ('$unit_id ',
                          '$payment_plan2',
@@ -92,7 +97,11 @@
                          '$payment_plan1',
                          '$payment_plan10',
                          '$payment_plan11',
-                         '$payment_plan12')";
+                         '$payment_plan12',
+                         '$payment_plan13',
+                         '$payment_plan14',
+                         '$payment_plan15'
+                         )";
                           $inset_query = mysqli_query($conn, $insert_payment);
                          echo "<h3 style='margin-top:50px'>data insert</h3>";
                             }
@@ -179,6 +188,12 @@
 
                 </tr>
 
+                <tr>
+                <td><input class="form-control"   type="text" name="payment_13"></td>
+                <td><input class="form-control"   type="text" name="payment_14"></td>
+                <td><input class="form-control"   type="text" name="payment_15"></td>
+
+                </tr>
 
 
 

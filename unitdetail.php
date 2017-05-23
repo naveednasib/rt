@@ -280,7 +280,6 @@ table{ empty-cells: hide;}
 
     <div class="mid-container clearfix">
 
-        <div class="col-xs-12"> <div id="map"></div></div>
         
 
     </div>
@@ -310,7 +309,8 @@ table{ empty-cells: hide;}
 
 
             <div class="agent-img col-sm-4 col-xs-12 paddingL">
-               
+               <div class="col-xs-12"> <div id="map"></div></div>
+        
 
                </div>
 
@@ -455,6 +455,11 @@ table{ empty-cells: hide;}
 ?>
 
  <script>
+
+ <?php 
+if(empty($logitude) && empty($latitude)){}
+else{
+ ?>
      function initMap() {
          var uluru = { lat: <?php echo $latitude ?>, lng: <?php echo $logitude ?> };
          var map = new google.maps.Map(document.getElementById('map'), {
@@ -468,10 +473,11 @@ table{ empty-cells: hide;}
      }
     </script>
 
- <?php  endwhile; ?>
-
-     <script async defer    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDozcm4BObnYJBHVQFZiIFgYgDcTQwADfI&callback=initMap">
+   <script async defer    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDozcm4BObnYJBHVQFZiIFgYgDcTQwADfI&callback=initMap">
     </script>
 
+ <?php } endwhile; ?>
+
+  
 </body>
 </html>

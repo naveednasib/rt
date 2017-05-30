@@ -192,42 +192,42 @@ table{ empty-cells: hide;}
                  <h2><strong>QUICK SUMMARY</strong></h2>
                 <table class="table table-striped table-responsive">
                     <tr>
-                        <td class="text-left"><strong>Property Id</strong></td>
-                        <td class="text-right">   <p><?php echo $row1[0] ?></p></td>
+                        <td class="text-left"><strong>Property Type</strong></td>
+                        <td class="text-right">   <p><?php echo $row1[13] ?></p></td>
                         
                     </tr>
 
                       <tr>
-                        <td class="text-left"><strong>Price</strong></td>
-                        <td class="text-right"><?php echo $row1[3] ?></td>
-                        
-                    </tr>
-
-
-                      <tr>
-                        <td class="text-left"><strong>Property Size</strong></td>
-                        <td class="text-right"><?php echo $row1[4] ?></td>
+                        <td class="text-left"><strong>Status</strong></td>
+                        <td class="text-right"><?php echo $row1[11] ?></td>
                         
                     </tr>
 
 
                       <tr>
-                        <td class="text-left"><strong>Bedrooms</strong></td>
-                        <td class="text-right"><?php echo $row1[15] ?></td>
+                        <td class="text-left"><strong>Year Launched</strong></td>
+                        <td class="text-right"><?php echo $row1[18] ?></td>
                         
                     </tr>
 
 
                       <tr>
-                        <td class="text-left"><strong>Bathrooms</strong></td>
-                        <td class="text-right"><?php echo $row1[16] ?></td>
-                        
-                    </tr>
-
-
-                      <tr>
-                        <td class="text-left"><strong>Available From</strong></td>
+                        <td class="text-left"><strong>Year of Completetion</strong></td>
                         <td class="text-right"><?php echo $row1[5] ?></td>
+                        
+                    </tr>
+
+
+                      <tr>
+                        <td class="text-left"><strong>Developer</strong></td>
+                        <td class="text-right"><?php echo $row1[14] ?></td>
+                        
+                    </tr>
+
+
+                      <tr>
+                        <td class="text-left"><strong>Floors</strong></td>
+                        <td class="text-right"><?php echo $row1[17] ?></td>
                         
                     </tr>
                 </table>
@@ -305,16 +305,16 @@ table{ empty-cells: hide;}
 
 
         <div class="agent-section clearfix mid-container padding15">
-            <h2><strong>CONTACT AGENT</strong></h2>
+            <h2><strong></strong></h2>
 
 
-            <div class="agent-img col-sm-4 col-xs-12 paddingL">
+            <div class="agent-img col-sm-8 col-xs-12 paddingL">
                <div class="col-xs-12"> <div id="map"></div></div>
         
 
                </div>
 
-            <div class="agent-detail-txt col-sm-4 col-xs-12">
+           <!--  <div class="agent-detail-txt col-sm-4 col-xs-12">
                 <h3>Bohdan Kononets</h3>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option congue nihil imperdiet doming…</p>
                 <table class="table">
@@ -354,7 +354,7 @@ table{ empty-cells: hide;}
                         <span class="t"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i>      </a>      </span>
                         <span class="v"><a href=""><i class="fa fa-vimeo" aria-hidden="true"></i>        </a>      </span>
                     </div>
-            </div>
+            </div> -->
 
 
             <div class="form col-sm-4 col-xs-12">
@@ -397,6 +397,16 @@ table{ empty-cells: hide;}
     include_once('layout/footer.php');
     ?>
     <!--footer-->
+
+
+
+
+
+
+
+
+
+
 
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>

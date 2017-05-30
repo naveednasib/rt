@@ -5,7 +5,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="style/css/main.css" rel="stylesheet" />
-
+    <link href="style/css/owl.carousel.min.css" rel="stylesheet" />
 
     <title>Home page</title>
    
@@ -21,12 +21,16 @@
 
 
 
-                $sql = "SELECT * FROM tbl_unitdetail";
-                $selectresult = mysqli_query($conn, $sql);
+              
 
 
                 $fetch_unit_detail ="SELECT * FROM tbl_unitdetail";
                 $unitresult = mysqli_query($conn, $fetch_unit_detail );
+
+
+                $fetch_lg_sliderimg ="SELECT * FROM tbl_homepage_lg_slider";
+                $lg_sliderimgresult = mysqli_query($conn, $fetch_lg_sliderimg );
+
 
 ?>
  
@@ -38,31 +42,52 @@
         <!--header-->
         <?php  
                 include_once('layout/header.php');
+                
         ?>
         <!--header-->
 
 
-
-    <!--home banner-->
-    <section class="home-banner">
-        <div class="mid-container clearfix">
-            <article class="col-xs-12 col-sm-7">
-                <h1 class="heading">
-                    <span class="heading-top">WE DON’T JUST FIND GREAT DEALS</span>
-                    <strong>WE CREATE THEM</strong>
-                    <p class="heading-bottom">We have Properties in these Areas Discover your place to live Get started in few clicks</p>
-                </h1>
-            </article>
-            <div class="col-xs-12 col-sm-5">
-              
-
+<!--home banner-->
+<section class="home-banner clearfix">
+   <!--   <div class="mid-container clearfix"> -->
+   <!--    <article class="col-xs-12 col-sm-7">
+      <h1 class="heading">
+          <span class="heading-top">WE DON’T JUST FIND GREAT DEALS</span>
+          <strong>WE CREATE THEM</strong>
+          <p class="heading-bottom">We have Properties in these Areas Discover your place to live Get started in few clicks</p>
+      </h1>
+      </article> -->
+   <div class="col-xs-12 col-sm-12 paddingZ">
+      <div id="headerslider" class="owl-carousel single-slider owl-theme">
 
 
 
-                </div>
+
+
+ <?php   while($rowlg_slider = mysqli_fetch_array($lg_sliderimgresult)):;
+
+  ?>
+         <div class="item">
+            <img class="img-responsive" src="<?php echo  str_replace('../','',$rowlg_slider[2]);  ?>" />         
+            <div class="abs-heading">
+               <h1 class="heading">
+                  <span class="heading-top"><?php echo  $rowlg_slider[3] ?> </span>
+                  <strong><?php echo  $rowlg_slider[4] ?></strong>
+                  <p class="heading-bottom"><?php echo  $rowlg_slider[5] ?></p>
+               </h1>
             </div>
-        </div>
-    </section>
+         </div>
+
+
+         <?php  endwhile; ?>
+
+   
+
+
+
+      </div>
+   </div>
+</section>
 
 
 
@@ -93,21 +118,16 @@
 
 
                 <div class="filter-search clearfix col-xs-12 paddingZ">
-                <div class="col-xs-12 col-sm-3 form-group">
-                    <select class="form-control">
-                        <option>Category</option>
-                    </select>
-                </div>
+               
 
-
-                    <div class="col-xs-12 col-sm-3 form-group paddingZ ">
+                    <div class="col-xs-12 col-sm-6 form-group paddingZ ">
                 <div class="input-group ">
                      <span class="input-group-addon">AED</span>
                          <input type="text" class="form-control"  placeholder="min price">
                 </div>
                     </div>
 
-              <div class="col-xs-12 col-sm-3 paddingZ form-group">
+              <div class="col-xs-12 col-sm-6 paddingZ form-group">
                     <div class="input-group">
                      <span class="input-group-addon">AED</span>
                       <input  type="text" class="form-control"   placeholder="min price"/>
@@ -116,11 +136,7 @@
 
 
 
-                 <div class="col-xs-12 col-sm-3 form-group">
-                   <select class="form-control">
-                        <option>Category</option>
-                    </select>
-                 </div>
+                 
 
 
 
@@ -136,38 +152,11 @@
           <div class="col-xs-12 col-sm-5">
               
 
-<form action="php/enquire.php" method="post">
-                <div class="form-container">
-
-                    <div class="form-group">
-                        <input type="text" name="firstname" class="form-control" value='' placeholder="First Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="lastname" class="form-control" placeholder="Last Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email"  name="email" class="form-control" placeholder="Email Address">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" required="Number" name="phonenumber" class="form-control" placeholder="Phone Number">
-                    </div>
-                    <div class="form-group">
- 
-                        <select name="developerName" class="form-control select-option">
-                      <?php   while($row1 = mysqli_fetch_array( $selectresult)):; ?>
-
-                            <option value="<?php echo $row1[0];?>"><?php echo $row1[1] ?></option>
-
-                            <?php  endwhile; ?>
-                       
-                        </select>
-                    </div>
-                    <div class="form-group">
-
-                        <button type="submit" class="btn btn-group-justified  btn-theme">Enqury</button>
-                    </div>
-
-</form>
+              <!--enquiry-->
+               <?php  
+                include_once('layout/enquiry-form.php');
+                     ?>
+                  <!--enquiry-->
 
 
                 </div>
@@ -425,7 +414,7 @@
 
                 <div class="btn-cont">
                     <a href="unitdetail.php?id=<?php echo $rowUnit[0] ?>"  class="btn  btn-blue">Detail</a>
-                    <a href="#" class="btn btn-yellow">Register Your interest</a>
+                    <a href="javascript:void(0);" class="btn btn-yellow"  data-toggle="modal" data-target="#myModal">Register Your interest</a>
                 </div>
             </div>
 
@@ -584,12 +573,54 @@
     ?>
     <!--footer-->
 
+
+     <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Submit your Enquiry </h4>
+        </div>
+        <div class="modal-body">
+          
+              <!--enquiry-->
+               <?php  
+                include('layout/enquiry-form.php');
+                     ?>
+                  <!--enquiry-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/common.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
 
 
+  <script>
+        $(document).ready(function () {
 
+            $('#headerslider').owlCarousel({
+                loop: true,
+                margin: 0,
+                items:1,
+                nav:true,
+                 navText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"],
+                          
+               
+            });
+  });
+
+              </script>
 
 </body>
 </html>

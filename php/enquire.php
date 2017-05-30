@@ -13,12 +13,28 @@ $developerName 	 =  $_POST['developerName'];
 
 
 
-	$sql = "INSERT INTO tbl_unit_enquiry(user_firstName, user_lastName, user_email,user_phoneNumber, user_selected_developer,user_selected_date) VALUES ('$firstname','$lastname' ,'$email','$phonenumber','$developerName',now())";
+	$sql = "INSERT INTO 
+					tbl_unit_enquiry(
+									 user_firstName, 
+									 user_lastName,
+									 user_email,
+									 user_phoneNumber,
+									 user_selected_developer,
+									 user_selected_date) 
+
+
+									  VALUES (
+									  '$firstname',
+									  '$lastname' ,
+									  '$email',
+									  '$phonenumber',
+									  '$developerName',
+									   now())";
 
 
 
 
-                $selectresult = mysqli_query($conn, $sql);
+               // $selectresult = mysqli_query($conn, $sql);
 
 
 if ($conn->query($sql) === TRUE) {

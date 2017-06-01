@@ -28,6 +28,7 @@ table{ empty-cells: hide;}
 
 
                 include_once('connection.php'); 
+                echo $_SESSION["favcolor"];
                 $id = $_GET['id'];
 
 

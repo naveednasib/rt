@@ -35,8 +35,8 @@
 
                 $sql = "SELECT id ,unit_name FROM tbl_unitdetail";
                 $fetch_Enquir_Result = mysqli_query($conn, $sql);
-
-            
+  
+     
 
 ?>
 

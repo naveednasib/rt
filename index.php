@@ -19,7 +19,8 @@
 
        include_once('connection.php'); 
 
-
+      $_SESSION["favcolor"] = "green";
+     
 
               
 
@@ -611,6 +612,7 @@
 
             $('#headerslider').owlCarousel({
                 loop: true,
+                autoplay:true,
                 margin: 0,
                 items:1,
                 nav:true,

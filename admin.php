@@ -25,14 +25,17 @@ include_once("connection.php");
     session_start();
     
 
-if(empty($_SESSION["username"]) && empty($_SESSION["password"]) ){
-// header('Refresh: 2; URL = admin.php');
-}
+// if(empty($_SESSION["username"]) && empty($_SESSION["password"]) ){
+// // header('Refresh: 2; URL = admin.php');
+// }
+   
+
 
 if(isset($_POST['login']) )
 {
     $user = $_POST['userid'];
     $pass = $_POST['user_password'];
+
 
     $checkquery = "  SELECT * FROM  tbl_admin_user WHERE username = '$user' AND user_password = '$pass';  ";
 
@@ -48,8 +51,9 @@ if(isset($_POST['login']) )
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = '$user';
-                  
-                 include_once('layout/cms-header.php');
+                    $msg = 'scuess';
+                   echo  $msg;
+                  include_once('layout/cms-header.php');
                }
 
 

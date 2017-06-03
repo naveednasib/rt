@@ -1,8 +1,6 @@
 
 
 
-
-
 <nav class="navbar cms-header navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -30,7 +28,9 @@
                <li><a href="add-map-location.php">Add map location         </a></li>
                <li><a href="add-faciltyaminites.php">Add Facilty & aminities  </a></li>
                <li><a href="add-payment-plan.php">Add payment plan</a></li>
-                <li><a href="add-unit-media.php">Add Unit media</a></li>
+               <li><a href="add-unit-media.php">Add Unit media</a></li>
+                <!--<li><a href="view-units.php">View Units</a></li>-->
+             
               </ul>
             </li>
 
@@ -41,8 +41,10 @@
               <ul class="dropdown-menu">
                 <li><a href="#">Header Slider</a></li>
                 <li><a href="#">Large slider</a></li>
-                <li><a href="add-home-tiles.php">Add home Tiles</a></li>
-                
+                  <li><a href="add-homepage-lg-slider.php">Add home page slider</a></li>
+                <li><a href="edit-remove-property.php">edit and remove units</a></li>
+
+               
               </ul>
             </li>
              <li><a href="view-enquiry.php">Enqury</a></li>
@@ -87,3 +89,14 @@
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{  background-color: white;}
     </style>
+
+
+<?php
+
+  //     }
+  // else{
+  //     // header('Location: admin.php');exit();
+  //   echo $_POST['userid'];
+  // }
+
+  ?>

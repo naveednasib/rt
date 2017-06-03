@@ -96,19 +96,21 @@
                         <td class="form-group">
 
 
-                              <select id="asd" required name="unit-developerName" onchange="setTextField(this)" class="form-control select-option">
+                              <select id="asd" required name="unit-developerName" onchange="getdevelopName(this)" class="form-control select-option">
+
+
                                 <?php   while($row2 = mysqli_fetch_array($selectresult)):; ?>
 
                                     <option value="<?php echo $row2[0];?>"><?php echo $row2[1] ?></option>
-
-                                <?php  endwhile; ?>
+                                    <?php $get_developer_name =  $row2[1];?>
+                                 <?php  endwhile; ?>
                        
                                 </select>
                             
-
-                            <input required id="developer-txt" type = "hidden" 
-                            name = "unit-developertxt" value = "" />
-
+ 
+                            <input id="developer-nametxt" type = "hidden" 
+                            name = "unit-developer-name" value = "<?php echo $get_developer_name; ?>" />
+                 
                         </td>
                     </tr>
 
@@ -118,7 +120,7 @@
                         <td class="form-group">
 
 
-                              <select required name="unit-developerName" onchange="setTextField(this)" class="form-control select-option">
+                              <select required name="unit-developerName" onchange="setprojectName(this)" class="form-control select-option">
                                 <?php   while($row2 = mysqli_fetch_array($projectsresult)):; ?>
 
                                     <option value="<?php echo $row2[0];?>"><?php echo $row2[1] ?></option>
@@ -128,8 +130,8 @@
                                 </select>
                             
 
-                            <input required id="developer-txt" type = "hidden" 
-                            name = "unit-developertxt" value = "" />
+                            <input required id="project-txt-name" type = "hidden" 
+                            name = "unit-projecttxt" value = "" />
 
                         </td>
                     </tr>
@@ -173,7 +175,9 @@
                     <tr>
                         <td><strong>Project Feature</strong> </td>
                         <td class="form-group">
-                            <input type="text" required name="unit-feature" class="form-control" placeholder="Project Feature" />
+                           <!--  <input type="text" required name="unit-feature" class="form-control" placeholder="Project Feature" /> -->
+                              <textarea rows="10"  name="unit-feature" class="form-control" placeholder="Project Feature" ></textarea>
+                            
                         </td>
                     </tr>
 
@@ -193,8 +197,31 @@
                      <tr>
                         <td><strong>Unit type</strong> </td>
                         <td class="form-group">
-                            <input type="text" required name="unit-type" class="form-control" placeholder="unit type" />
-                        </td>
+               
+                      
+
+                                    <select required name="unit-type" onchange="getunit_type(this)"  class="form-control" >
+                                    
+                                    <option value="1">Apartment</option>
+                                    <option value="2">Villa</option>
+                                    <option value="3">Townhouse</option>
+                                    <option value="3">Penthouse</option>
+                                    <option value="5">Compound</option>
+                                    <option value="6">Duplex</option>
+                                    <option value="7">Full floor</option>
+                                    <option value="8">Whole Building</option>
+                                    <option value="9">Bulk Rent Units</option>
+                                    <option value="10">Bungalow</option>
+                                    <option value="11">Hotel/Hotel Apartment</option>
+                                    <option value="12">Labor Camp</option>
+
+                                    </select>
+
+                             <input required id="unit-type" type = "hidden" 
+                            name ="unit-type-text" value = "Apartment" />
+
+
+                                                        </td>
                     </tr>
 
 
@@ -207,12 +234,42 @@
 
 
 
- <tr>
+                    <tr>
                         <td><strong>Number of Bathrooms</strong> </td>
                         <td class="form-group">
-                            <input type="text" required name="unit-bathrooms" class="form-control" placeholder="Bedrooms" />
+                            <input type="text" required name="unit-bathrooms" class="form-control" placeholder="Bathrooms" />
                         </td>
                     </tr>
+
+
+
+
+                    <tr>
+                        <td><strong>Property Status</strong> </td>
+                        <td class="form-group">
+                            <input type="text" required name="unit-status" class="form-control" placeholder="Property status" />
+                        </td>
+                    </tr>
+
+
+
+                      <tr>
+                        <td><strong>Location</strong> </td>
+                        <td class="form-group">
+                            <input type="text" required name="unit-floors" class="form-control" 
+                            placeholder="Property Floors" />
+                        </td>
+                    </tr>
+
+
+                       <tr>
+                        <td><strong>Property launched Date</strong> </td>
+                        <td class="form-group">
+                            <input type="text" required name="unit-launched" class="form-control" placeholder="Property Luanched Date" />
+                        </td>
+                    </tr>
+
+
 
 
 
@@ -232,7 +289,7 @@
                     <tr>
 
                         <td class="form-group" colspan="2">
-                            <input type="submit" class="form-control btn btn-info" />
+                            <input type="submit" class="btn pull-right btn-lg btn-success" />
                         </td>
                     </tr>
                 </table>
@@ -260,9 +317,16 @@ include_once('layout/footer.php');
     <script src="js/common.js"></script>
 
     <script type="text/javascript">
-    function setTextField(ddl) {
-        document.getElementById('developer-txt').value = ddl.options[ddl.selectedIndex].text;
+    function setprojectName(ddl) {
+        document.getElementById('project-txt-name').value = ddl.options[ddl.selectedIndex].text;
     }
+      function getunit_type(ddl) {
+        document.getElementById('unit-type').value = ddl.options[ddl.selectedIndex].text;
+    }
+     function getdevelopName(ddl) {
+             document.getElementById('developer-nametxt').value = ddl.options[ddl.selectedIndex].text;
+    }
+    
     </script>
 
 

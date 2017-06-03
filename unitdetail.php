@@ -19,7 +19,7 @@ table{ empty-cells: hide;}
 
   #map {
     width: 100%;
-    height: 400px;
+    height: 385px;
     background-color: grey;
 }
      </style>
@@ -27,7 +27,8 @@ table{ empty-cells: hide;}
      <?php 
 
 
-                include_once('connection.php'); 
+                include_once('connection.php');
+                echo $_SESSION["favcolor"];
                 $id = $_GET['id'];
 
 
@@ -169,7 +170,7 @@ table{ empty-cells: hide;}
 
 
         <section class="para-unit-detail mid-container padding15">
-            <h2><strong>PROPERTY DESCRIPTION</strong></h2>
+            <h2><strong style="font-size: 20px; color: #666666;">PROPERTY DESCRIPTION</strong></h2>
 
 
                           
@@ -189,45 +190,45 @@ table{ empty-cells: hide;}
 
 
             <div class="col-xs-12 col-sm-6 paddingL ">
-                 <h2><strong>QUICK SUMMARY</strong></h2>
+                 <h2><strong style="font-size: 20px; color: #666666;">QUICK SUMMARY</strong></h2>
                 <table class="table table-striped table-responsive">
                     <tr>
-                        <td class="text-left"><strong>Property Id</strong></td>
-                        <td class="text-right">   <p><?php echo $row1[0] ?></p></td>
+                        <td class="text-left"><strong>Property Type</strong></td>
+                        <td class="text-right">   <?php echo $row1[13] ?></td>
                         
                     </tr>
 
                       <tr>
-                        <td class="text-left"><strong>Price</strong></td>
-                        <td class="text-right"><?php echo $row1[3] ?></td>
-                        
-                    </tr>
-
-
-                      <tr>
-                        <td class="text-left"><strong>Property Size</strong></td>
-                        <td class="text-right"><?php echo $row1[4] ?></td>
+                        <td class="text-left"><strong>Status</strong></td>
+                        <td class="text-right"><?php echo $row1[11] ?></td>
                         
                     </tr>
 
 
                       <tr>
-                        <td class="text-left"><strong>Bedrooms</strong></td>
-                        <td class="text-right"><?php echo $row1[15] ?></td>
+                        <td class="text-left"><strong>Year Launched</strong></td>
+                        <td class="text-right"><?php echo $row1[18] ?></td>
                         
                     </tr>
 
 
                       <tr>
-                        <td class="text-left"><strong>Bathrooms</strong></td>
-                        <td class="text-right"><?php echo $row1[16] ?></td>
-                        
-                    </tr>
-
-
-                      <tr>
-                        <td class="text-left"><strong>Available From</strong></td>
+                        <td class="text-left"><strong>Year of Completetion</strong></td>
                         <td class="text-right"><?php echo $row1[5] ?></td>
+                        
+                    </tr>
+
+
+                      <tr>
+                        <td class="text-left"><strong>Developer</strong></td>
+                        <td class="text-right"><?php echo $row1[14] ?></td>
+                        
+                    </tr>
+
+
+                      <tr>
+                        <td class="text-left"><strong>Location</strong></td>
+                        <td class="text-right"><?php echo $row1[17] ?></td>
                         
                     </tr>
                 </table>
@@ -235,7 +236,7 @@ table{ empty-cells: hide;}
 
 
                <div class="col-xs-12 col-sm-6 ">
-                         <h2><strong>PAYMENT PLAN</strong></h2>
+                         <h2><strong style="font-size: 20px; color: #666666;">PAYMENT PLAN</strong></h2>
              
              <?php   while($payment = mysqli_fetch_array($paymentplan_query)):; ?>
                 <table class="table table-striped table-responsive">
@@ -286,35 +287,20 @@ table{ empty-cells: hide;}
 
 </section>
 
-
-
-        <div class="feature-property mid-container clearfix padding15">
-            <h2><strong>FEATURES</strong></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum, bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt.</p>
-
-
-            <div class="col-xs-4 paddingL"><img class="img-responsive" src="http://content.gomasterkey.com/images/watermark.aspx?imageurl=/uf/1002/unit/339886/1693643_Image.jpg&amp;width=360&amp;height=218&amp;&amp;group=1002&amp;module=13&amp;watermarkType=Default&amp;position=~Lounge/Living"></div>
-
-                   <div class="col-xs-4"><img class="img-responsive" src="http://content.gomasterkey.com/images/watermark.aspx?imageurl=/uf/1002/unit/339886/1693643_Image.jpg&amp;width=360&amp;height=218&amp;&amp;group=1002&amp;module=13&amp;watermarkType=Default&amp;position=~Lounge/Living"></div>
-
-               <div class="col-xs-4"><img class="img-responsive" src="http://content.gomasterkey.com/images/watermark.aspx?imageurl=/uf/1002/unit/339886/1693643_Image.jpg&amp;width=360&amp;height=218&amp;&amp;group=1002&amp;module=13&amp;watermarkType=Default&amp;position=~Lounge/Living"></div>
-
-        </div>
-
-
-
-
         <div class="agent-section clearfix mid-container padding15">
-            <h2><strong>CONTACT AGENT</strong></h2>
+            <h2><strong style="font-size: 20px; color: #666666;">LOCATION MAP</strong></h2>
 
 
-            <div class="agent-img col-sm-4 col-xs-12 paddingL">
-               <div class="col-xs-12"> <div id="map"></div></div>
+            <div class="agent-img col-sm-8 col-xs-12 paddingL">
+               <div class="col-xs-12" style="width: 100%;
+    background-color: grey;
+    margin-left: 0px;
+    margin-top: 20px;"> <div id="map"></div></div>
         
 
                </div>
 
-            <div class="agent-detail-txt col-sm-4 col-xs-12">
+           <!--  <div class="agent-detail-txt col-sm-4 col-xs-12">
                 <h3>Bohdan Kononets</h3>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum soluta nobis consectetuer adipiscing eleifend option congue nihil imperdiet doming…</p>
                 <table class="table">
@@ -354,7 +340,7 @@ table{ empty-cells: hide;}
                         <span class="t"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i>      </a>      </span>
                         <span class="v"><a href=""><i class="fa fa-vimeo" aria-hidden="true"></i>        </a>      </span>
                     </div>
-            </div>
+            </div> -->
 
 
             <div class="form col-sm-4 col-xs-12">
@@ -379,7 +365,7 @@ table{ empty-cells: hide;}
                     </div>
                     <div class="form-group">
 
-                        <button type="submit" class="btn btn-group-justified  btn-theme">Enqury</button>
+                        <button type="submit" class="btn btn-group-justified  btn-theme">Enquiry</button>
                     </div>
 
                 </div>
@@ -397,6 +383,16 @@ table{ empty-cells: hide;}
     include_once('layout/footer.php');
     ?>
     <!--footer-->
+
+
+
+
+
+
+
+
+
+
 
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>

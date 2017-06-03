@@ -29,7 +29,7 @@ include_once('connection.php');
                 if(isset($_POST['btn_submit'])){
                        
 
-                       $devName = $_POST['dev-name'];
+                $devName = $_POST['dev-name'];
 
 
                 $developer_temp = $_FILES["devloper_img"]["tmp_name"];

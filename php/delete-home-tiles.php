@@ -1,18 +1,24 @@
 <?php 
 
 
-  			 include_once('connection.php');
+  			     include_once('../connection.php');
 
 
-  			 $getId = $_POST['id'];
+  			 $getId = $_POST['del_id'];
+
 
   			 // DELETE FROM music WHERE msuic_id ='$music_number
-			$sql = "SELECT id,project_developer,project_logo FROM tbl_project";
-			$result = $conn->query($sql);
-
+			$deletequery = "Delete FROM tbl_unitdetail where id = '$getId' ";
+		       
+			$result = mysqli_query($conn, $deletequery );
+			//$result=mysqli_query($deletequery);
 
 	
-
+			if($result == true) {
+   			echo "success";
+			} else {
+		    echo "NO";
+			}
 									
 
                 ?>

@@ -1,0 +1,3 @@
+[30-May-2017 10:56:02 UTC] PHP Notice:  Undefined index: unitId in /home/offpland/public_html/rt/php/add-sm-images.php on line 5
+[30-May-2017 10:56:02 UTC] PHP Notice:  Undefined index: unitname in /home/offpland/public_html/rt/php/add-sm-images.php on line 6
+[30-May-2017 10:56:02 UTC] PHP Notice:  Undefined index: file_img in /home/offpland/public_html/rt/php/add-sm-images.php on line 43

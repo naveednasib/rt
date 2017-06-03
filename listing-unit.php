@@ -20,13 +20,27 @@
        include_once('connection.php'); 
 
 
+            
+                if(isset($_GET['dev_id'] )){
+            $devId =  $_GET['dev_id'];
+            
+                $fetch_unit_detail ="SELECT * FROM tbl_unitdetail WHERE unit_developerid ='$devId'";
+                $unitresult = mysqli_query($conn, $fetch_unit_detail );
+                }
 
-                $sql = "SELECT * FROM tbl_unitdetail";
-                $selectresult = mysqli_query($conn, $sql);
-
+                else{
 
                 $fetch_unit_detail ="SELECT * FROM tbl_unitdetail";
                 $unitresult = mysqli_query($conn, $fetch_unit_detail );
+                }
+
+
+                // $sql = "SELECT * FROM tbl_unitdetail";
+                // $selectresult = mysqli_query($conn, $sql);
+
+
+
+           
 
 ?>
  

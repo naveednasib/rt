@@ -238,41 +238,8 @@
                         <td><strong>Number of Bathrooms</strong> </td>
                         <td class="form-group">
                             <input type="text" required name="unit-bathrooms" class="form-control" placeholder="Bathrooms" />
-<<<<<<< HEAD
-=======
                         </td>
                     </tr>
-
-
-
-
-                    <tr>
-                        <td><strong>Property Status</strong> </td>
-                        <td class="form-group">
-                            <input type="text" required name="unit-status" class="form-control" placeholder="Property status" />
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
-                        </td>
-                    </tr>
-
-
-
-                      <tr>
-                        <td><strong>Property Floors</strong> </td>
-                        <td class="form-group">
-                            <input type="text" required name="unit-floors" class="form-control" 
-                            placeholder="Property Floors" />
-                        </td>
-                    </tr>
-
-
-                       <tr>
-                        <td><strong>Property launched Date</strong> </td>
-                        <td class="form-group">
-                            <input type="text" required name="unit-launched" class="form-control" placeholder="Property Luanched Date" />
-                        </td>
-                    </tr>
-
-
 
 
 

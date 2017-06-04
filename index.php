@@ -19,13 +19,8 @@
 
        include_once('connection.php'); 
 
-      $_SESSION["favcolor"] = "green";
-     
 
-<<<<<<< HEAD
 $_SESSION["favcolor"] = "green";
-=======
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
               
 
 
@@ -47,7 +42,6 @@ $_SESSION["favcolor"] = "green";
         <!--header-->
         <?php  
                 include_once('layout/header.php');
-                
         ?>
         <!--header-->
 
@@ -636,11 +630,7 @@ Our job is to provide you with all the information that will help you to underst
 
             $('#headerslider').owlCarousel({
                 loop: true,
-<<<<<<< HEAD
                 autoplay:1,
-=======
-                autoplay:true,
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
                 margin: 0,
                 items:1,
                 nav:true,

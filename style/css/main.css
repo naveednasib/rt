@@ -381,11 +381,7 @@ body:not(.woocommerce-page) {
 /* line 8, ../scss/partials/_header.scss */
 .header .header-tab1 .logo a i {
   display: inline-block;
-<<<<<<< HEAD
   font-size: 1.8em;
-=======
-  font-size: 2em;
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
 }
 /* line 9, ../scss/partials/_header.scss */
 .header .header-tab1 .logo a .lgo-title {
@@ -930,11 +926,7 @@ body:not(.woocommerce-page) {
 
 /* line 95, ../scss/partials/wide-slider.scss */
 .bullet-slider {
-<<<<<<< HEAD
       padding: 0px 12px 1px;
-=======
-  padding: 0px 15px 29px;
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
 }
 /* line 98, ../scss/partials/wide-slider.scss */
 .bullet-slider .txt-cont {
@@ -997,13 +989,8 @@ body {
 
 .form-serach{background-color:#EEF2FB;    padding: 23px;}
 .form-serach .heading{    color: #032354;    font-weight: bold; text-transform: uppercase;}
-<<<<<<< HEAD
 .form-serach .parang{   font-size: 14px;       color: #2C2D32;}
 .form-serach .heading5{     font-size: 22px;       color: #2C2D32;    padding-top: 33px;}
-=======
-.form-serach .parang{   font-size: 16px;       color: #2C2D32;}
-.form-serach .heading5{     font-size: 20px;       color: #2C2D32;    padding-top: 55px;}
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
 .form-serach .headingy{    font-size: 20px;       color: #78632A;}
 
 
@@ -1039,11 +1026,7 @@ body {
   font-size: 15px;
 }
 .home-banner {
-<<<<<<< HEAD
     max-height: 600px;
-=======
-    max-height: 505px;
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
     overflow: hidden;
 }
 .owl-nav{    position: absolute;

@@ -27,11 +27,7 @@ table{ empty-cells: hide;}
      <?php 
 
 
-<<<<<<< HEAD
                 include_once('connection.php');
-=======
-                include_once('connection.php'); 
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
                 echo $_SESSION["favcolor"];
                 $id = $_GET['id'];
 
@@ -198,11 +194,7 @@ table{ empty-cells: hide;}
                 <table class="table table-striped table-responsive">
                     <tr>
                         <td class="text-left"><strong>Property Type</strong></td>
-<<<<<<< HEAD
                         <td class="text-right">   <?php echo $row1[13] ?></td>
-=======
-                        <td class="text-right">   <p><?php echo $row1[13] ?></p></td>
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
                         
                     </tr>
 
@@ -235,11 +227,7 @@ table{ empty-cells: hide;}
 
 
                       <tr>
-<<<<<<< HEAD
                         <td class="text-left"><strong>Location</strong></td>
-=======
-                        <td class="text-left"><strong>Floors</strong></td>
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
                         <td class="text-right"><?php echo $row1[17] ?></td>
                         
                     </tr>
@@ -300,7 +288,6 @@ table{ empty-cells: hide;}
 </section>
 
         <div class="agent-section clearfix mid-container padding15">
-<<<<<<< HEAD
             <h2><strong style="font-size: 20px; color: #666666;">LOCATION MAP</strong></h2>
 
 
@@ -309,13 +296,6 @@ table{ empty-cells: hide;}
     background-color: grey;
     margin-left: 0px;
     margin-top: 20px;"> <div id="map"></div></div>
-=======
-            <h2><strong></strong></h2>
-
-
-            <div class="agent-img col-sm-8 col-xs-12 paddingL">
-               <div class="col-xs-12"> <div id="map"></div></div>
->>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
         
 
                </div>

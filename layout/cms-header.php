@@ -29,7 +29,11 @@
                <li><a href="add-faciltyaminites.php">Add Facilty & aminities  </a></li>
                <li><a href="add-payment-plan.php">Add payment plan</a></li>
                <li><a href="add-unit-media.php">Add Unit media</a></li>
+<<<<<<< HEAD
                 <!--<li><a href="view-units.php">View Units</a></li>-->
+=======
+                <li><a href="view-units.php">View Units</a></li>
+>>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
              
               </ul>
             </li>
@@ -42,7 +46,11 @@
                 <li><a href="#">Header Slider</a></li>
                 <li><a href="#">Large slider</a></li>
                   <li><a href="add-homepage-lg-slider.php">Add home page slider</a></li>
+<<<<<<< HEAD
                 <li><a href="edit-remove-property.php">edit and remove units</a></li>
+=======
+                <li><a href="edit-remove-property.php">Add home Tiles</a></li>
+>>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
 
                
               </ul>

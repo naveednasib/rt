@@ -21,8 +21,8 @@
 
 <?php 
 include_once("connection.php");
-     ob_start();
-    session_start();
+     // ob_start();
+    // session_start();
     
 
 // if(empty($_SESSION["username"]) && empty($_SESSION["password"]) ){

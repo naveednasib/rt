@@ -9,9 +9,14 @@
 
                 $sql1 = "SELECT * FROM tbl_unitdetail";
                 $selectresult1 = mysqli_query($conn, $sql1);
+<<<<<<< HEAD
                 
                 $fetchDeveloper = "SELECT * FROM `tbl_developer`";
                 $developerQuery = mysqli_query($conn,$fetchDeveloper);   
+=======
+
+
+>>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
 
 
 ?>
@@ -106,6 +111,7 @@
                                 </ul>
                             </li>
                            <!--  <li><a href="/unitdetail.html">Developers</a></li> -->
+<<<<<<< HEAD
                             
 
                             <li  class="dropdown sliding-nav-container parent-nav"><a href="#">Dubai Developers <span class="caret"></span></a>
@@ -134,6 +140,11 @@
                             
                         </ul> </li>
                         <li><a href="contactus.php">Contact Us</a></li>
+=======
+                            <li><a href="#">About Us </a></li>
+                            <li><a href="contactus.php">Contact Us</a></li>
+                        </ul>
+>>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
                       <!--   <ul class="nav navbar-nav navbar-right search-input">
                             <li class="form-group">
 

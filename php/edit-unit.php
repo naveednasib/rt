@@ -2,6 +2,11 @@
 
 
         include_once('../connection.php');
+<<<<<<< HEAD
+=======
+       
+        
+>>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
                 
 $id = $_GET['id'];
  		$unitname                                =  $_POST['unit-name'];

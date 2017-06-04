@@ -35,8 +35,13 @@
 
                 $sql = "SELECT id ,unit_name FROM tbl_unitdetail";
                 $fetch_Enquir_Result = mysqli_query($conn, $sql);
+<<<<<<< HEAD
 
             
+=======
+  
+     
+>>>>>>> 9a1ce4b11f10b3ffd9c4582b9840807362968975
 
 ?>
 

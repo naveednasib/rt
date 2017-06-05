@@ -34,27 +34,7 @@
                         $payment_plan1   = $_POST['payment_1'];
                         $payment_plan2   = $_POST['payment_2'];
                         $payment_plan3   = $_POST['payment_3'];
-                        $payment_plan4   = $_POST['payment_4'];
-                        $payment_plan5   = $_POST['payment_5'];
-                        $payment_plan6   = $_POST['payment_6'];
-                        $payment_plan7   = $_POST['payment_7'];
-                        $payment_plan8   = $_POST['payment_8'];
-                        $payment_plan9   = $_POST['payment_9'];
-                        $payment_plan10  = $_POST['payment_10'];
-                        $payment_plan11  = $_POST['payment_11'];
-                        $payment_plan12  = $_POST['payment_12'];
-                        $payment_plan13  = $_POST['payment_13'];
-                        $payment_plan14  = $_POST['payment_14'];
-                        $payment_plan15  = $_POST['payment_15'];
-                        $payment_plan16  = $_POST['payment_16'];
-                        $payment_plan17  = $_POST['payment_17'];
-                        $payment_plan18  = $_POST['payment_18'];
-                        $payment_plan19  = $_POST['payment_19'];
-                        $payment_plan20  = $_POST['payment_20'];
-                        $payment_plan21  = $_POST['payment_21'];
-                        $payment_plan22  = $_POST['payment_22'];
-                        $payment_plan23  = $_POST['payment_23'];
-                        $payment_plan24  = $_POST['payment_24'];
+                    
                         
                       
                         $check_unitid = "select * from tbl_payment_plan where unit_id =  $unit_id  ";
@@ -65,104 +45,7 @@
                           
                           $fetch_paymentId = mysqli_fetch_array( $checkquery);                        
                        
-                         if ($fetch_paymentId[1] == $unit_id) {
-
-                            $insert_payment = "
-         
-                             UPDATE  tbl_payment_plan 
-                            SET  
                          
-                            payment_2   ='$payment_plan2', 
-                            payment_3   ='$payment_plan3', 
-                            payment_4   ='$payment_plan4', 
-                            payment_5   ='$payment_plan5', 
-                            payment_6   ='$payment_plan6', 
-                            payment_7   ='$payment_plan7', 
-                            payment_8   ='$payment_plan8', 
-                            payment_9   ='$payment_plan9', 
-                            payment_1   ='$payment_plan10', 
-                            payment_10  ='$payment_plan1', 
-                            payment_11  ='$payment_plan11', 
-                            payment_12  ='$payment_plan12',
-                            payment_13  ='$payment_plan13', 
-                            payment_14  ='$payment_plan14', 
-                            payment_15  ='$payment_plan15',                             
-                            payment_17  ='$payment_plan17', 
-                            payment_18  ='$payment_plan18',
-                            payment_19  ='$payment_plan19',
-                            payment_20  ='$payment_plan20',
-                            payment_21  ='$payment_plan21',
-                            payment_22  ='$payment_plan22', 
-                            payment_23  ='$payment_plan23', 
-                            payment_24  ='$payment_plan24'   
-
-                            WHERE unit_id = '$unit_id' " ;
-
-
-                            $inset_query = mysqli_query($conn, $insert_payment);
-                            var_dump( $inset_query)  ;
-                                
-                                 // trigger_error( $insert_payment);
-
-                              if($inset_query){
-                             echo "<h3 style='margin-top:50px'>data Updated</h3>";
-                                }
-                               else{
-
-                 
-                      
-                          }
-                            
-                          }
-                      
-                        else{     
-
-                        $insert_payment = " INSERT INTO  
-                        tbl_payment_plan
-                         (  unit_id ,  payment_2 ,  payment_3 ,  payment_4 ,  payment_5 ,  payment_6 ,  payment_7 ,  payment_8 ,  payment_9 ,  payment_1 ,  payment_10 ,  payment_11 ,  payment_12,payment_13,payment_14,
-                           payment_15,payment_16,payment_17,
-                           payment_18,payment_19,payment_20,payment_21, 
-                           payment_22,payment_23,payment_24
-                         ) 
-                         VALUES 
-                         ('$unit_id ',
-                         '$payment_plan2',
-                         '$payment_plan3',
-                         '$payment_plan4',
-                         '$payment_plan5',
-                         '$payment_plan6',
-                         '$payment_plan7',
-                         '$payment_plan8',
-                         '$payment_plan9',
-                         '$payment_plan1',
-                         '$payment_plan10',
-                         '$payment_plan11',
-                         '$payment_plan12',
-                         '$payment_plan13',
-                         '$payment_plan14',
-                         '$payment_plan15',
-                         '$payment_plan16',
-                         '$payment_plan17',
-                         '$payment_plan18',
-                         '$payment_plan19',
-                         '$payment_plan20',
-                         '$payment_plan21',
-                         '$payment_plan22',
-                         '$payment_plan23',
-                         '$payment_plan24'
-                         )";
-                          $inset_query = mysqli_query($conn, $insert_payment);
-                         
-                          if($inset_query){
-                          echo "<h3 style='margin-top:50px'>data insert</h3>";
-                          }
-                          else{
-                          
-                           // echo $error;
-                          }
-
-             
-                          }
 
                                
 
@@ -196,7 +79,7 @@
             <div class="col-xs-12 col-sm-6">
                 <h2>payment plan </h2>
             
-        <form  action="add-payment-plan.php" enctype="multipart/form-data" method="post">
+        <form  name="add_payment_plan"   id="pm_plan">
 
 
 
@@ -221,67 +104,14 @@
                     </td>
                 </tr>
 
-                <tr>
-                <td><input class="form-control"  type="text" name="payment_1"></td>
-                <td><input class="form-control"  type="text" name="payment_2"></td>
-                <td><input class="form-control"  type="text" name="payment_3"></td>
-
-                </tr>
-                 <tr>
-                <td><input class="form-control"   type="text" name="payment_4"></td>
-                <td><input class="form-control"   type="text" name="payment_5"></td>
-                <td><input class="form-control"   type="text" name="payment_6"></td>
-
-                </tr>
-                 <tr>
-                <td><input class="form-control"   type="text" name="payment_7"></td>
-                <td><input class="form-control"   type="text" name="payment_8"></td>
-                <td><input class="form-control"   type="text" name="payment_9"></td>
-
-                </tr>
-                 <tr>
-                <td><input class="form-control"   type="text" name="payment_10"></td>
-                <td><input class="form-control"   type="text" name="payment_11"></td>
-                <td><input class="form-control"   type="text" name="payment_12"></td>
+                <tr class="paymentplan_row">
+                <td><input class="form-control"  type="text" name="payment[]"></td>
+                <td><input class="form-control"  type="text" name="payment[]"></td>
+                <td><input class="form-control"  type="text" name="payment[]"></td>
 
                 </tr>
 
-                <tr>
-                <td><input class="form-control"   type="text" name="payment_13"></td>
-                <td><input class="form-control"   type="text" name="payment_14"></td>
-                <td><input class="form-control"   type="text" name="payment_15"></td>
-
-                </tr>
-
-                 <tr>
-                <td><input class="form-control"   type="text" name="payment_16"></td>
-                <td><input class="form-control"   type="text" name="payment_17"></td>
-                <td><input class="form-control"   type="text" name="payment_18"></td>
-
-                </tr>
-
-
-                 <tr>
-                <td><input class="form-control"   type="text" name="payment_19"></td>
-                <td><input class="form-control"   type="text" name="payment_20"></td>
-                <td><input class="form-control"   type="text" name="payment_21"></td>
-
-                </tr>
-
-                 <tr>
-                <td><input class="form-control"   type="text" name="payment_22"></td>
-                <td><input class="form-control"   type="text" name="payment_23"></td>
-                <td><input class="form-control"   type="text" name="payment_24"></td>
-
-                </tr>
-
-
-
-                <tr>
-                    <td colspan="3"><input type="submit" class="btn btn-success" value="submit" name="payment_plan"/></td>
-
-                </tr>
-
+           
 
             
 
@@ -291,8 +121,14 @@
                 </table>
 
   
-
-
+<div class="col-xs-12">
+     <button type="button" class="btn btn-info btn-lg addmore_row">Add more  row</button>
+  
+     <input type="submit" id="submit" class="btn btn-success btn-lg" value="submit" name="payment_plan"/>
+ 
+  </div>
+  <br/>  <br/>  <br/>
+  
         </form> 
 
 
@@ -336,6 +172,35 @@
     function setTextField(ddl) {
         document.getElementById('unitname').value = ddl.options[ddl.selectedIndex].text;
     }
+
+var i =0;
+    $(".addmore_row").click(function(){
+    i++;
+    var row = "  <tr class='paymentplan_row'> ";
+    row +=  "<td><input class='form-control'  type='text' name='payment[]'></td>";
+    row +=  "<td><input class='form-control'  type='text' name='payment[]'></td>";
+    row +=  "<td><input class='form-control'  type='text' name='payment[]'></td>";
+    row +=  " </tr>";     
+
+
+$("table tbody").append(row );
+    });
+
+    $("#submit").click(function(){
+        $.ajax({
+            url:"php/add-payment-plan.php",
+            method:"POST",
+            data:$('#add_payment_plan').serialize(),
+            success:function(data){
+                  console.log(data);
+           $("body").append(data);
+             $('#add_payment_plan')[0].reset();
+            }
+
+        });
+
+    });
+
 </script>
 </body>
 </html>

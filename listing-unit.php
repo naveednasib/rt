@@ -118,7 +118,7 @@
                 <div class="txt-cont">
                     <h4 class="heading"><?php echo $rowUnit[1] ?></h4>
                     <p class="usp"><?php echo $rowUnit[2] ?> </p>
-                    <p class="para"><?php echo $rowUnit[6] ?></p>
+                    <div class="para"><?php echo $rowUnit[6] ?></div>
                 </div>
 
 

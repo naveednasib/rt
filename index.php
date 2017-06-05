@@ -31,7 +31,7 @@ $_SESSION["favcolor"] = "green";
                 $fetch_lg_sliderimg ="SELECT * FROM tbl_homepage_lg_slider";
                 $lg_sliderimgresult = mysqli_query($conn, $fetch_lg_sliderimg );
 
-
+// echo ("here");
 ?>
  
 </head>
@@ -410,7 +410,7 @@ Our job is to provide you with all the information that will help you to underst
                 <div class="txt-cont">
                     <h4 class="heading"><?php echo $rowUnit[1] ?></h4>
                     <p class="usp"><?php echo $rowUnit[2] ?> </p>
-                    <p class="para"><?php echo $rowUnit[6] ?></p>
+                    <div class="para"><?php echo $rowUnit[6] ?></div>
                 </div>
 
 

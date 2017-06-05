@@ -28,7 +28,8 @@ table{ empty-cells: hide;}
 
 
                 include_once('connection.php');
-                echo $_SESSION["favcolor"];
+                
+                // echo $_SESSION["favcolor"];
                 $id = $_GET['id'];
 
 
@@ -262,9 +263,33 @@ table{ empty-cells: hide;}
                 </tr>
 
                 <tr>
-                <td><?php echo  $payment[11] ?>                     </td>
+                <td><?php echo  $payment[1] ?>                     </td>
+                <td><?php echo  $payment[11] ?>                      </td>
                 <td><?php echo  $payment[12] ?>                      </td>
-                <td><?php echo  $payment[13] ?>                      </td>
+                </tr>
+
+               <tr>
+                <td><?php echo  $payment[13] ?>                     </td>
+                <td><?php echo  $payment[14] ?>                      </td>
+                <td><?php echo  $payment[15] ?>                      </td>
+                </tr>
+
+                <tr>
+                <td><?php echo  $payment[16] ?>                     </td>
+                <td><?php echo  $payment[17] ?>                      </td>
+                <td><?php echo  $payment[18] ?>                      </td>
+                </tr>
+                
+                    <tr>
+                <td><?php echo  $payment[19] ?>                     </td>
+                <td><?php echo  $payment[20] ?>                      </td>
+                <td><?php echo  $payment[21] ?>                      </td>
+                </tr>
+
+                <tr>
+                <td><?php echo  $payment[22] ?>                     </td>
+                <td><?php echo  $payment[23] ?>                      </td>
+                <td><?php echo  $payment[24] ?>                      </td>
                 </tr>
                 
                 

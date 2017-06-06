@@ -46,7 +46,7 @@ table{ empty-cells: hide;}
                 $img_sm_query = mysqli_query($conn,$fetch_sm_Img);
 
 
-                $fetch_paymentplan ="select * from tbl_payment_plan where unit_id='$id'";
+                $fetch_paymentplan ="select * from tbl_payment_plan2 where unit_id='$id'";
                 $paymentplan_query = mysqli_query($conn,$fetch_paymentplan);
 
                 $fetch_media ="select * from tbl_unit_media where unit_id='$id'";
@@ -239,64 +239,23 @@ table{ empty-cells: hide;}
                <div class="col-xs-12 col-sm-6 ">
                          <h2><strong style="font-size: 20px; color: #666666;">PAYMENT PLAN</strong></h2>
              
-             <?php   while($payment = mysqli_fetch_array($paymentplan_query)):; ?>
+         
                 <table class="table table-striped table-responsive">
                    
-
+    <?php   while($payment = mysqli_fetch_array($paymentplan_query)):; ?>
                  
                 <tr>
-                <td><?php echo  $payment[10] ?>                     </td>
-                <td><?php echo  $payment[2] ?>                      </td>
+                <td><?php echo  $payment[2] ?>                     </td>
                 <td><?php echo  $payment[3] ?>                      </td>
+                <td><?php echo  $payment[4] ?>                      </td>
                 </tr>
 
-                <tr>
-                <td><?php echo  $payment[4] ?>                     </td>
-                <td><?php echo  $payment[5] ?>                      </td>
-                <td><?php echo  $payment[6] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[7] ?>                     </td>
-                <td><?php echo  $payment[8] ?>                      </td>
-                <td><?php echo  $payment[9] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[1] ?>                     </td>
-                <td><?php echo  $payment[11] ?>                      </td>
-                <td><?php echo  $payment[12] ?>                      </td>
-                </tr>
-
-               <tr>
-                <td><?php echo  $payment[13] ?>                     </td>
-                <td><?php echo  $payment[14] ?>                      </td>
-                <td><?php echo  $payment[15] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[16] ?>                     </td>
-                <td><?php echo  $payment[17] ?>                      </td>
-                <td><?php echo  $payment[18] ?>                      </td>
-                </tr>
-                
-                    <tr>
-                <td><?php echo  $payment[19] ?>                     </td>
-                <td><?php echo  $payment[20] ?>                      </td>
-                <td><?php echo  $payment[21] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[22] ?>                     </td>
-                <td><?php echo  $payment[23] ?>                      </td>
-                <td><?php echo  $payment[24] ?>                      </td>
-                </tr>
-                
-                
+           
+                 <?php  endwhile; ?>    
 
                 </table>
 
-               <?php  endwhile; ?>    
+              
             </div>
 
         </div>

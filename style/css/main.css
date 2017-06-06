@@ -1059,8 +1059,42 @@ body {
 }
 
 
-.header .slilding-nav .property-slider-nav .nav-dynamic-container li{display: inline-block;    padding:5px 15px 0;}
+/*.header .slilding-nav .property-slider-nav .nav-dynamic-container li{display: inline-block;    padding:5px 15px 0;}*/
 
-
+/*.header .slilding-nav .property-slider-nav .nav-dynamic-container li{}*/
 
 .header .slilding-nav .property-slider-nav a{text-transform: capitalize; color: #2c2c2c; margin-bottom: 10px; margin-top: 10px; margin-top: 10px; display: inline-block;}
+
+
+
+
+
+
+.nav-dynamic-container{
+        columns: 2;
+    -webkit-columns: 4;
+    -moz-columns: 2;
+     float: left;padding-left:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

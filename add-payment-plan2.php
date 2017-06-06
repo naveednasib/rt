@@ -45,7 +45,7 @@
                           
                           $fetch_paymentId = mysqli_fetch_array( $checkquery);                        
                        
-                         
+                      
 
                                
 
@@ -79,7 +79,7 @@
             <div class="col-xs-12 col-sm-6">
                 <h2>payment plan </h2>
             
-        <form  name="add_payment_plan"   id="pm_plan">
+        <form  action="php/add-payment-plan.php" method="post"   name="add_payment_plan"   id="pm_plan">
 
 
 
@@ -95,8 +95,11 @@
 
                              <?php   while($row1 = mysqli_fetch_array($selectresult)):; ?>
                             <option value="<?php echo $row1[0];?>"><?php echo $row1[1] ?></option>
-                            <?php  endwhile; ?>                       
+
+         
+                            <?php  endwhile;    ?>                       
                         </select>
+
 
                         <input required id="unitname" type = "hidden" 
                             name = "unitname" value = "" />
@@ -105,11 +108,12 @@
                 </tr>
 
                 <tr class="paymentplan_row">
-                <td><input class="form-control"  type="text" name="payment[]"></td>
-                <td><input class="form-control"  type="text" name="payment[]"></td>
-                <td><input class="form-control"  type="text" name="payment[]"></td>
+                <td><input class="form-control"  type="text" name="payment1[]"></td>
+                <td><input class="form-control"  type="text" name="payment2[]"></td>
+                <td><input class="form-control"  type="text" name="payment3[]"></td>
 
                 </tr>
+            
 
            
 
@@ -177,29 +181,29 @@ var i =0;
     $(".addmore_row").click(function(){
     i++;
     var row = "  <tr class='paymentplan_row'> ";
-    row +=  "<td><input class='form-control'  type='text' name='payment[]'></td>";
-    row +=  "<td><input class='form-control'  type='text' name='payment[]'></td>";
-    row +=  "<td><input class='form-control'  type='text' name='payment[]'></td>";
+    row +=  "<td><input class='form-control'  type='text' name='payment1[]'></td>";
+    row +=  "<td><input class='form-control'  type='text' name='payment2[]'></td>";
+    row +=  "<td><input class='form-control'  type='text' name='payment3[]'></td>";
     row +=  " </tr>";     
 
 
 $("table tbody").append(row );
     });
 
-    $("#submit").click(function(){
-        $.ajax({
-            url:"php/add-payment-plan.php",
-            method:"POST",
-            data:$('#add_payment_plan').serialize(),
-            success:function(data){
-                  console.log(data);
-           $("body").append(data);
-             $('#add_payment_plan')[0].reset();
-            }
+    // $("#submit").click(function(){
+    //     $.ajax({
+    //         url:"php/add-payment-plan.php",
+    //         method:"POST",
+    //         data:$('#pm_plan').serialize(),
+    //         success:function(data){
+    //               console.log(data);
+           
+    //          $('#pm_plan')[0].reset();
+    //         }
 
-        });
+    //     });
 
-    });
+    // });
 
 </script>
 </body>

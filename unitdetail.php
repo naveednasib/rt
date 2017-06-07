@@ -46,10 +46,10 @@ table{ empty-cells: hide;}
                 $img_sm_query = mysqli_query($conn,$fetch_sm_Img);
 
 
-                $fetch_paymentplan ="select * from tbl_payment_plan where unit_id='$id'";
+                $fetch_paymentplan ="select * from tbl_payment_plan2 where unit_id='$id'";
                 $paymentplan_query = mysqli_query($conn,$fetch_paymentplan);
 
-                $fetch_media ="select * from tbl_unit_media where unit_id='$id'";
+                $fetch_media ="select * from tbl_unit_media2 where unit_id='$id'";
                 $media_query = mysqli_query($conn, $fetch_media);
 
 
@@ -72,8 +72,8 @@ table{ empty-cells: hide;}
     <section class="property-detail-wraper">
 
         <div class="mid-container">
-            <h1 class="heading">PROPERTY DETAILS - 2</h1>
-            <p class="para">Serving you since 1999. Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            <h1 class="heading">PROJECT DETAILS</h1>
+            <p class="para"></p>
 
         </div>
 
@@ -141,15 +141,16 @@ table{ empty-cells: hide;}
 
    <?php   while($get_media = mysqli_fetch_array( $media_query)):;         ?>
 
-            <div class=" col-xs-12  am-div col-sm-4">
+         <?php if  ($get_media[2] == 0){?>
+           <div class=" col-xs-12  am-div col-sm-4">
             <?php
-                $brochure = $get_media[2]; 
+                $brochure = $get_media[3]; 
                $brochure = str_replace('../','', $brochure );    
             ?>
             <a href="<?php  echo $brochure?>" download>
             <span><i class="glyphicon glyphicon-save-file"></i>Download Brochure</span></a></div>
-
-
+         <?php }?>
+ <?php if  ($get_media[2] == 1){?>
              <div class="col-xs-12 am-div col-sm-4">
              <?php
                 $paymentplan = $get_media[3]; 
@@ -157,15 +158,19 @@ table{ empty-cells: hide;}
             ?>
              <a href="<?php  echo  $paymentplan ?>" download><span><i class="glyphicon glyphicon-save-file"></i>Download Payment Plan</span></a></div>
 
+<?php }?>
 
+ <?php if  ($get_media[2] == 2){?>
              <div class="col-xs-12 am-div col-sm-4">
             <?php
-                $floorplan = $get_media[4]; 
+                $floorplan = $get_media[3]; 
                $floorplan = str_replace('../','', $floorplan );    
             ?>
              <a href="<?php echo $floorplan ?>" download><span><i class="glyphicon glyphicon-save-file"></i>Download FloorPlan</span></a></div>
-         <?php  endwhile; ?>
-
+        
+        <?php }?>
+       
+   <?php  endwhile; ?>
 
         </div>
 
@@ -239,64 +244,23 @@ table{ empty-cells: hide;}
                <div class="col-xs-12 col-sm-6 ">
                          <h2><strong style="font-size: 20px; color: #666666;">PAYMENT PLAN</strong></h2>
              
-             <?php   while($payment = mysqli_fetch_array($paymentplan_query)):; ?>
+         
                 <table class="table table-striped table-responsive">
                    
-
+    <?php   while($payment = mysqli_fetch_array($paymentplan_query)):; ?>
                  
                 <tr>
-                <td><?php echo  $payment[10] ?>                     </td>
-                <td><?php echo  $payment[2] ?>                      </td>
+                <td><?php echo  $payment[2] ?>                     </td>
                 <td><?php echo  $payment[3] ?>                      </td>
+                <td><?php echo  $payment[4] ?>                      </td>
                 </tr>
 
-                <tr>
-                <td><?php echo  $payment[4] ?>                     </td>
-                <td><?php echo  $payment[5] ?>                      </td>
-                <td><?php echo  $payment[6] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[7] ?>                     </td>
-                <td><?php echo  $payment[8] ?>                      </td>
-                <td><?php echo  $payment[9] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[1] ?>                     </td>
-                <td><?php echo  $payment[11] ?>                      </td>
-                <td><?php echo  $payment[12] ?>                      </td>
-                </tr>
-
-               <tr>
-                <td><?php echo  $payment[13] ?>                     </td>
-                <td><?php echo  $payment[14] ?>                      </td>
-                <td><?php echo  $payment[15] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[16] ?>                     </td>
-                <td><?php echo  $payment[17] ?>                      </td>
-                <td><?php echo  $payment[18] ?>                      </td>
-                </tr>
-                
-                    <tr>
-                <td><?php echo  $payment[19] ?>                     </td>
-                <td><?php echo  $payment[20] ?>                      </td>
-                <td><?php echo  $payment[21] ?>                      </td>
-                </tr>
-
-                <tr>
-                <td><?php echo  $payment[22] ?>                     </td>
-                <td><?php echo  $payment[23] ?>                      </td>
-                <td><?php echo  $payment[24] ?>                      </td>
-                </tr>
-                
-                
+           
+                 <?php  endwhile; ?>    
 
                 </table>
 
-               <?php  endwhile; ?>    
+              
             </div>
 
         </div>

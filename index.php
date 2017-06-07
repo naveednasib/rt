@@ -403,7 +403,7 @@ Our job is to provide you with all the information that will help you to underst
 
                     <img src="<?php echo $nid?>" />
                     <span class="feature">Featured</span>
-                    <span class="sale">For Sale</span>
+                    <span class="sale">Starting Price</span>
                     <span class=" price"><?php echo $rowUnit[3] ?> </span>
                 </div>
 

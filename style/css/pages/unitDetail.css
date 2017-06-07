@@ -44,7 +44,7 @@
 }
 /* line 27, ../../scss/pages/unitDetail.scss */
 .property-detail-slider .multislider {
-  padding: 15px 0;
+  padding: 9px 0;
 }
 /* line 28, ../../scss/pages/unitDetail.scss */
 .property-detail-slider .multislider .owl-prev {
@@ -53,7 +53,7 @@
   top: 25%;
   font-size: 20px;
   background-color: rgba(250, 250, 250, 0.8);
-  padding: 15px;
+  padding: 0px 10px 0px 7px;
 }
 /* line 29, ../../scss/pages/unitDetail.scss */
 .property-detail-slider .multislider .owl-next {
@@ -62,7 +62,7 @@
   top: 25%;
   font-size: 20px;
   background-color: rgba(250, 250, 250, 0.8);
-  padding: 15px;
+  padding: 0px 10px 0px 7px;
 }
 
 /* line 38, ../../scss/pages/unitDetail.scss */

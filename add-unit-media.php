@@ -57,6 +57,7 @@
                        // for brochure
                     if($empty_brochure ){
                         $create_brochure_folder   = "media/brochure/".$unit_Id ."/";   
+
                          if (!file_exists($create_brochure_folder)) {  
                             mkdir($create_brochure_folder);
                             $brochuretmp    = $brochure;
@@ -121,22 +122,16 @@
                      $count = $brochure_count.$paymentplan_count.$floorplane_count;
                       
                   
-                        $getTables = $brochure_tableName . $paymentplan_tableName .$floorplane_tableName ;
-                       $getTables = preg_replace('/,/', ' ', $getTables, 1);
+                    //     $getTables = $brochure_tableName . $paymentplan_tableName .$floorplane_tableName ;
+                    //    $getTables = preg_replace('/,/', ' ', $getTables, 1);
 
-                       $getfilepaths = $brochure_uploadpth.$paymentplan_uploadpth .$floorplane_uploadpth;
-                        $getfilepaths= preg_replace('/,/', ' ', $getfilepaths, 1);
-                      
+                    //    $getfilepaths = $brochure_uploadpth.$paymentplan_uploadpth .$floorplane_uploadpth;
+                    //     $getfilepaths= preg_replace('/,/', ' ', $getfilepaths, 1);                   
                     
+                    //  $insertImage = " INSERT INTO tbl_unit_media($getTables,unit_Id) VALUES ($getfilepaths,$unit_Id ) ";
 
-                    // $getTables = $brochure_tableName . $paymentplan_uploadpth .$floorplane_tableName ;
-                    // $getvalues ='';
-
-
-                   $insertImage = " INSERT INTO tbl_unit_media($getTables,unit_Id) VALUES ($getfilepaths,$unit_Id ) ";
-
-                     $result = mysqli_query($conn,$insertImage);                         
-                     echo '<h3 style="color:green;">Files Added</h3>' ;
+                    //  $result = mysqli_query($conn,$insertImage);                         
+                    //  echo '<h3 style="color:green;">Files Added</h3>' ;
 
                 }    
 

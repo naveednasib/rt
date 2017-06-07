@@ -28,7 +28,7 @@
                <li><a href="add-map-location.php">Add map location         </a></li>
                <li><a href="add-faciltyaminites.php">Add Facilty & aminities  </a></li>
                <li><a href="add-payment-plan.php">Add payment plan</a></li>
-               <li><a href="add-unit-media.php">Add Unit media</a></li>
+               <li><a href="add-unit-media2.php">Add Unit media</a></li>
                 <!--<li><a href="view-units.php">View Units</a></li>-->
              
               </ul>
@@ -88,6 +88,8 @@
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{  background-color: white;}
+   
+   body{padding-top:80px;}
     </style>
 
 

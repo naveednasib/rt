@@ -1,9 +1,9 @@
  <?php
 
-             $servername = "localhost";
-             $username = "root";
-             $password = "";
-             $dbname = "appelo";
+           $servername = "localhost";
+           $username = "root";
+           $password = "";
+           $dbname = "appelo";
 	   
                         session_start();
 

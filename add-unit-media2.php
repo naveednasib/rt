@@ -26,83 +26,142 @@
                 $selectresult = mysqli_query($conn, $sql);
 
              
-          
+
+         
             
                 if(isset($_POST['unit_media']) )
                 {
+                   
                     $unit_Id                  = $_POST['unitId'];
                     $media_type               = $_POST['media-type'];                   
                     $brochure                 = $_FILES['file']["tmp_name"];
-             
-                    echo     $brochure  ;
-                        
+                    $brochure_check           = 0;
+                    $paymentplan_check        = 1;
+                    $floorplan_check          = 2;
+                     
+                   
+   
+                            function media_upload($mediaType) {
+                                 global $brochure,$brochure_folder,$unit_Id  ,$conn  ;
+                              
+                              
+
+                             $brochuretmp    = $brochure;
+                            $brochurename   = $_FILES["file"]["name"];
+                            $extension = pathinfo("$brochurename",PATHINFO_EXTENSION);
+
+
+                             $result =  glob ($brochure_folder."unit-".$unit_Id.".*");
+                           
+                          
+
+                             if($result){
+                                 unlink($result[0]);    
+                           
+                              $brochurename = "unit-".$unit_Id.".".$extension;
+                              $brochuretype   = $_FILES["file"]["type"];                                
+                              $brochurepath   = $brochure_folder.($brochurename) ;
+                              move_uploaded_file($brochuretmp , $brochurepath );
+                           
+                              $brochure_query = "   Update  tbl_unit_media2
+                                                    Set
+                                                    link       ='$brochurepath'
+                                                    where
+                                                    ( unit_id =  '$unit_Id') 
+                                                    &&
+                                                    (media_type = '$mediaType');
+
+                                                     ";                              
+                              if($conn->query( $brochure_query)===TRUE){
+                                 echo "Data Update ".$brochurepath;
+                              }
+                              else{
+                                  echo "Error:". $brochure_query."<br/>".$conn->error;
+                                  }
+                         
+
+                             }
+                             
+                                else{
+                              $brochurename = "unit-".$unit_Id.".".$extension;
+                              $brochuretype   = $_FILES["file"]["type"];                                
+                              $brochurepath   = $brochure_folder.($brochurename) ;
+                              move_uploaded_file($brochuretmp , $brochurepath );
+
+                              $brochure_query = "insert into tbl_unit_media2(unit_id,media_type,link) values ( '$unit_Id','$mediaType','$brochurepath') ";
+                             
+                
+                             if ($conn->query($brochure_query) === TRUE) {
+                              echo "Data insert ".$brochurepath; 
+                                   } 
+                             else  {
+                               echo "Error: " . $brochure_query . "<br>" . $conn->error;     
+                                   }
+
+
+
+
+                                }
+                                
+                            }
+          
+
 
                          // for brochure
-                         if($media_type ==0 ){
-                         $create_brochure_folder   = "media/brochure/".$unit_Id ."/";   
+                         if($media_type == $brochure_check ){
+                         $brochure_folder   = "media/brochure/";   
+                            
+                              media_upload($brochure_check);
+                            
+                                
+                                 }
 
-                         if (!file_exists($create_brochure_folder)) {  
-                            mkdir($create_brochure_folder);
+                        // for brochure
 
 
-              
-                             
-                           
 
 
-                            $brochuretmp    = $brochure;
-                            $brochurename   = $_FILES["brochure"]["name"];
-                            $brochuretype   = $_FILES["brochure"]["type"];
-                            $brochurepath   = $create_brochure_folder.$brochurename ;
-                            move_uploaded_file($brochuretmp , $brochurepath );
-                          
-                                                    
 
-                            $brochure_query = "insert into tbl_unit_media2(unit_id,media_type) values ( '$unit_Id','$brochurepath ') ";
-                            $bro_query      = mysqli($conn,$brochure_query);
 
-                           }
 
-                         
-                         else{                 
 
-                            if(count(glob("$create_brochure_folder/*")) === 0)
-                                 {
-                               echo ("$create_brochure_folder/*");
+
+    
+                        // for payement
+
+                         if($media_type == $paymentplan_check ){
+                         $brochure_folder   = "media/paymentplan/";   
+                            
+                            
+                      media_upload($paymentplan_check);
+                            
+                                
                                  }
 
 
-                             else{
-               
-                                $files = glob($create_brochure_folder."*"); // get all file names
-                                foreach($files as $file){ // iterate files
-                                if(is_file($file))
-                                unlink($file); // delete file   
-                                 } 
-
-
-                            $brochuretmp    = $brochure;
-                            $brochurename   = $_FILES["brochure"]["name"];
-                            $brochuretype   = $_FILES["brochure"]["type"];
-                            $brochurepath   = $create_brochure_folder.$brochurename ;
-                            move_uploaded_file($brochuretmp , $brochurepath );
-                         
-
-
-                                        }
-                                echo "files exits";
-                          
-                           }
-                               
-                               
-                               
-                                  }
+                        // for payment plan
 
 
 
 
+                         // for floor plan
 
-    }
+                         if($media_type == $floorplan_check ){
+                            $brochure_folder   = "media/floorplan/";   
+                            
+                           media_upload($floorplan_check);
+                                
+                                 }
+
+
+                        // for floor plan
+
+    
+   
+   
+   
+   
+    } 
 
 
                     ?>

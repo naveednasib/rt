@@ -27,6 +27,13 @@
 
 
           
+                $fetchslider = "SELECT tbl_unitdetail.id,tbl_unitdetail.unit_name,tbl_homepage_lg_slider.unit_img_path
+                    FROM  tbl_unitdetail
+                    INNER JOIN tbl_homepage_lg_slider 
+                    ON
+                    tbl_unitdetail.id = tbl_homepage_lg_slider.unit_id
+                    ";
+                $fetch_Enquir_Result = mysqli_query($conn, $fetchslider);
 
 
 
@@ -51,7 +58,7 @@
 
 
 
-                <table class="table table-responsive">
+                <table class="table table-bordered table-condensed table-striped">
 
 
 
@@ -130,6 +137,50 @@
             </div>
         
 
+         <div class="col-xs-12 col-sm-6">
+
+    <h2>Remove Slider</h2>
+
+<?php
+
+if (($fetch_Enquir_Result) && ($fetch_Enquir_Result->num_rows > 0))
+{
+    echo "<table class='table table-bordered table-condensed table-striped'>";
+    //convert query result into an associative array
+
+ 
+   
+    while ($row = $fetch_Enquir_Result->fetch_array())
+    {         
+            echo "<tr class='$row[0] '>";
+            
+           echo"<td>     $row[0]          </td>";
+
+            echo"<td>    $row[1]          </td>";
+            
+
+            echo"<td class='  $row[1] '>   
+                      
+                        <a href='javascript:void(0); ' onclick='deleteRow($row[id])'
+                        id='delete$row[id]' data-imgpath='$row[2]' class='btn btn-danger delete' >Delete</a>
+                                 
+                                  </td>";
+
+
+           
+
+        
+    }
+             echo "</table>";
+
+    // $fetch_Enquir_Result->free();   
+}  
+        $conn->close();  
+?>
+
+
+
+                </div>
      
          
         </div>
@@ -165,6 +216,35 @@
     function setTextField(ddl) {
         document.getElementById('unitname').value = ddl.options[ddl.selectedIndex].text;
     }
+    
+    function deleteRow(id)
+                    {
+        var del_id          = id;
+        var $ele            = $("#delete"+del_id).parent().parent();
+        var imgpath         =  $("#delete"+del_id).attr("data-imgpath");
+      alert(imgpath );
+     
+        $.ajax({
+            type:'POST',
+            url:'php/delete-home-slider.php',
+            data:{'del_id':del_id,'imgpath':imgpath},
+            success: function(data){
+               
+                 if( data == " success"){
+                    $ele.fadeOut().remove();
+                 
+                    alert("record deleted")
+                 }else{
+                        console.log(data);
+                        alert("can't delete the row");
+                        
+                 }
+
+             }
+
+            });
+    
+        }
 </script>
 </body>
 </html>

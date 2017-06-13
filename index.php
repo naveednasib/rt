@@ -14,26 +14,24 @@
     .form-container      .select-option {padding:0 15px ;    height: 52px;}
      </style>
 
-     <?php 
+             <?php 
 
 
-       include_once('connection.php'); 
+                 include_once('connection.php'); 
 
 
-$_SESSION["favcolor"] = "green";
-              
 
 
-                $fetch_unit_detail ="SELECT * FROM tbl_unitdetail";
+                $fetch_unit_detail =" SELECT *  FROM tbl_unitdetail   LIMIT 3 ";
                 $unitresult = mysqli_query($conn, $fetch_unit_detail );
 
 
                 $fetch_lg_sliderimg ="SELECT * FROM tbl_homepage_lg_slider";
                 $lg_sliderimgresult = mysqli_query($conn, $fetch_lg_sliderimg );
 
-// echo ("here");
-?>
- 
+
+                    ?>
+    
 </head>
 <body>
 
@@ -429,7 +427,7 @@ Our job is to provide you with all the information that will help you to underst
 
 
             <div class="col-xs-12 text-center btn-containr">
-                <a href="#" class="btn btn-blue">More Project</a>
+                <a href="#" class="btn btn-blue load-more">More Project</a>
             </div>
         </div>
     </section>
@@ -638,6 +636,43 @@ Our job is to provide you with all the information that will help you to underst
                           
                
             });
+
+            
+
+
+                                $(".load-more").click(function(){
+
+                                         $.ajax({
+                                             url: 'php/loadmore.php',
+                                             type: 'POST',
+                                             data: {
+                                                     page:$(this).data('page'),
+                                                   },
+                                             success: function(response){
+                                                  if(response){
+                                                  
+
+                                              
+                                         
+                                                var obj = response;
+                                                console.log(obj);
+                                   
+                                   
+                                
+
+
+                                          
+                                                            }
+                                                 
+                                                
+                                                  
+                                               
+                                                     }
+                                                   });
+                                          });
+
+                                   
+
   });
 
               </script>

@@ -1,39 +1,70 @@
 <?php
 	 include_once('../connection.php');
 
-
-     $fetch_pagination ='SELECT * FROM `tbl_unitdetail`ORDER BY id ASC LIMIT 5 ,2';
+     $tile_value   = $_POST['value'];
+     $fetch_pagination ="SELECT * FROM `tbl_unitdetail`ORDER BY id ASC LIMIT  $tile_value ,3";
     
   
   
     $result = mysqli_query($conn,$fetch_pagination);
-  
+ 
   
     if ($result== TRUE) 
     
     {
-            $i=0;
-        while($rows = mysqli_fetch_array($result))
+           
+                        
+              
+              
+              
+                while($rows = mysqli_fetch_array($result))
+                {   
+                    $id = $rows[0];
+                    $fetch_unitdetail ="SELECT 
+                    id,
+                    unit_name,
+                    unit_location,
+                    unit_price,
+                    unit_feature,  
+                    (SELECT images_path FROM tbl_unit_sm_img AS tbl_img   WHERE tbl_img.unit_id ='$id' LIMIT 1 )
+                    FROM tbl_unitdetail WHERE id= '$id'
+                        ";
+                    
+                    $resultunitdetail = mysqli_query($conn,$fetch_unitdetail);
+       
+                if ($resultunitdetail == TRUE) 
+    
                 {
+                while($rows_spec = mysqli_fetch_array($resultunitdetail)){
+
+
+                $data[] =array('unit_id'             =>$rows_spec[0],
+                              'unit_name'            =>$rows_spec[1],
+                              'unit_location'        =>$rows_spec[2],
+                              'unit_price'           =>$rows_spec[3],
+                              'unit_feature'         =>$rows_spec[4],
+                              'unit_image'           =>str_replace('../','',$rows_spec[5]),
+                              );
+                    }
+                    }
+
             
 
-                 $data[$i] =array('unit_id'          =>$rows[0],
-                              'unit_name'            =>$rows[1],
-                              'unit_location'        =>$rows[2],
-                              'unit_price'           =>$rows[3],
-                              'unit_feature'         =>$rows[6]
-                              );
 
-                           
-                $jsonData = json_encode(array($data[$i])   );
-                // echo  "~~~~~~~~~~~~~~~~~~~~ ";
-                echo  $jsonData[$i];
-                
-                $i++;
+
+
+                }
+               
+
+
+               
                  
-                 }
                  
+
+                $jsonData = json_encode(array('unitDetails'=>$data));
+                echo  $jsonData;
     }
+
 
 
 

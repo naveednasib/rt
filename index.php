@@ -362,10 +362,11 @@ Our job is to provide you with all the information that will help you to underst
 
     <!--tile container-->
     <section class="tile-container">
-        <div class="mid-container clearfix">
+        <div class="mid-container clearfix ">
             
 
 
+<div class="tile-container-ajax clearfix">
 
             <!--tile-->
             <?php   while($rowUnit = mysqli_fetch_array($unitresult)):; ?>
@@ -422,12 +423,12 @@ Our job is to provide you with all the information that will help you to underst
 
             <!--tile-->
 
-
+</div>
          
 
 
             <div class="col-xs-12 text-center btn-containr">
-                <a href="#" class="btn btn-blue load-more">More Project</a>
+                <button type="button" class="btn btn-blue load-more">More Project</button>
             </div>
         </div>
     </section>
@@ -583,7 +584,7 @@ Our job is to provide you with all the information that will help you to underst
 
 
 
-
+<input type="hidden" class="tile-value" name="tilevalue" value="3"/>
     <!--footer-->
     <?php 
     include_once('layout/footer.php');
@@ -637,8 +638,17 @@ Our job is to provide you with all the information that will help you to underst
                
             });
 
-            
+            var  tile ;
+      
+                
 
+
+               
+                //   $(".tile-container .mid-container").append( tile);
+               
+               
+           
+var value =3;
 
                                 $(".load-more").click(function(){
 
@@ -647,21 +657,58 @@ Our job is to provide you with all the information that will help you to underst
                                              type: 'POST',
                                              data: {
                                                      page:$(this).data('page'),
+                                                     value:value
                                                    },
                                              success: function(response){
                                                   if(response){
                                                   
-
-                                              
-                                         
-                                                var obj = response;
-                                                console.log(obj);
-                                   
-                                   
-                                
+     if(response == null)
+                               
+                               {
+                                   $(".tile-container .tile-container-ajax").append( "<h2>bus</h2>");
+                               }
 
 
+                               else{
+                        // console.log(response);              
+                         response = JSON.parse(response);
+                         
                                           
+                            $.each(response.unitDetails, function(index){
+                               unit_id           = this.unit_id;
+                               unit_name         = this.unit_name;
+                               unit_location     = this.unit_location;
+                               unit_price        = this.unit_price;
+                               unit_feature      = this.unit_feature;
+                               unit_image      = this.unit_image;
+
+
+
+                 tile =      '<div  class="col-xs-12 col-sm-4 tile" '+unit_id+' >';
+                 tile +=     '<div class="img-cont">';   
+                 tile +=     '<img src="'+unit_image+'"/>';
+                 tile +=    ' <span class="feature">Featured</span>';
+                 tile +=    '  <span class="sale">Starting Price</span>';
+                 tile +=    '<span class=" price">'+unit_price+' </span>';
+                 tile +=    '</div>';
+                 tile +=    '<div class="txt-cont">';
+                 tile +=    '<h4 class="heading">'+unit_name+' </h4>';
+                 tile +=    ' <p class="usp">'+unit_location +' </p>';
+                 tile +=    '<div class="para">'+unit_feature+' </div>';
+                 tile +=    '</div>';
+                 tile +=    ' <div class="btn-cont">';
+                 tile +=    '  <a href="unitdetail.php?id='+unit_id+'"  class="btn  btn-blue">Detail</a>';
+                 tile +=    '<a href="javascript:void(0);" class="btn btn-yellow"  data-toggle="modal" data-target="#myModal">Register Your interest</a>';
+                 tile +=    ' </div>';
+                 tile +=    ' </div>';
+               
+                 $(".tile-container .tile-container-ajax").append( tile);
+                               
+                                });
+                                 
+                               value+=3;
+}
+                          
                                                             }
                                                  
                                                 

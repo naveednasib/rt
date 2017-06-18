@@ -22,7 +22,7 @@
 
 
 
-                $fetch_unit_detail =" SELECT *  FROM tbl_unitdetail   LIMIT 3 ";
+                $fetch_unit_detail =" SELECT *  FROM tbl_unitdetail   LIMIT 6 ";
                 $unitresult = mysqli_query($conn, $fetch_unit_detail );
 
 
@@ -591,7 +591,9 @@ Our job is to provide you with all the information that will help you to underst
     ?>
     <!--footer-->
 
-
+<div class="loader-container">
+<div class="loader"></div>
+</div>
      <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -658,8 +660,12 @@ var value =3;
                                              data: {
                                                      page:$(this).data('page'),
                                                      value:value
-                                                   },
+                                                   }, 
+                                                   beforeSend: function(){
+                                                   $('.loader-container').css("display","flex");
+                                                                 },
                                              success: function(response){
+                                                    $('.loader-container').css("display","none");
                                                   if(response){
                                                   
      if(response == null)
@@ -706,7 +712,7 @@ var value =3;
                                
                                 });
                                  
-                               value+=3;
+                               value+=6;
 }
                           
                                                             }

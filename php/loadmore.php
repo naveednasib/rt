@@ -2,7 +2,7 @@
 	 include_once('../connection.php');
 
      $tile_value   = $_POST['value'];
-     $fetch_pagination ="SELECT * FROM `tbl_unitdetail`ORDER BY id ASC LIMIT  $tile_value ,3";
+     $fetch_pagination ="SELECT * FROM `tbl_unitdetail`ORDER BY id ASC LIMIT  $tile_value ,6";
     
   
   

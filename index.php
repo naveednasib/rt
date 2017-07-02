@@ -730,5 +730,27 @@ var value =3;
 
               </script>
 
+              <script>
+$(document).ready(function(){
+    
+  $('.dropdown-submenu').on("click", function(e){
+   $('.dropdown-submenu').children('ul').slideUp();
+   $('.dropdown-submenu').find('.caret' ).removeClass('Odeg');
+
+   $(this).find('.caret' ).toggleClass('Odeg');
+    $(this).children('ul').slideToggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+//     $('.dropdown-submenu ').on("mouseleave", function(e){
+   
+//     $(this).next('ul').slideToggle();
+//     e.stopPropagation();
+//     e.preventDefault();
+//   });
+
+});
+</script>
+
 </body>
 </html>

@@ -21,6 +21,10 @@
         <?php 
 include_once('connection.php');
 
+                 include_once('connection.php'); 
+
+                $get_developers = "SELECT id ,project_developer FROM tbl_developer";
+                $fetch_developers = mysqli_query($conn, $get_developers);
 
                 // $sql = "SELECT id,project_developer FROM tbl_project";
                 // $selectresult = mysqli_query($conn, $sql);
@@ -101,6 +105,8 @@ include_once('connection.php');
 
         <div class="mid-container clearfix">
             <div class="col-xs-12 col-sm-6">
+              
+              
                 <h2>Upload Images </h2>
 
         <form  action="add-developer.php" enctype="multipart/form-data" method="post">
@@ -117,7 +123,7 @@ include_once('connection.php');
                     </tr>
     
 
-    <tr>
+                    <tr>
         <td class='' >
         <label for="file">File to upload:</label> 
         </td>
@@ -154,8 +160,47 @@ include_once('connection.php');
             </div>
         
 
-     
-         
+       <div class="col-xs-12 col-sm-6">
+
+       
+<?php
+
+if (($fetch_developers) && ($fetch_developers->num_rows > 0))
+{
+    echo "<table class='table table-bordered table-condensed table-striped'>";
+    //convert query result into an associative array
+
+ 
+   
+    while ($row = $fetch_developers->fetch_array())
+    {         
+            echo "<tr class='$row[0] '>";
+            
+           echo"<td>     $row[0]          </td>";
+
+            echo"<td>    $row[1]          </td>";
+
+            echo"<td class='  $row[1] '>   
+                      
+                        <a href='javascript:void(0); ' onclick='deleteRow($row[id])'
+                        id='delete$row[id]' class='btn btn-danger delete' >Delete</a>
+                                 
+                                  </td>";
+
+
+           
+
+        
+    }
+             echo "</table>";
+
+    // $fetch_Enquir_Result->free();   
+}  
+        $conn->close();  
+?>
+
+
+         </div>
         </div>
     
        
@@ -188,6 +233,31 @@ include_once('connection.php');
     function setTextField(ddl) {
         document.getElementById('developer-txt').value = ddl.options[ddl.selectedIndex].text;
     }
+      function deleteRow(id)
+                    {
+       var del_id = id;
+        var $ele   = $("#delete"+del_id).parent().parent();
+      
+     
+        $.ajax({
+            type:'POST',
+            url:'php/delete-developer.php',
+            data:{'del_id':del_id},
+            success: function(data){
+               
+                 if( data == " success"){
+                    $ele.fadeOut().remove();
+                    alert("record deleted")
+                 }else{
+                        alert("can't delete the row");
+                        
+                 }
+
+             }
+
+            });
+    
+        }
 </script>
 </body>
 </html>

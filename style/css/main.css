@@ -1104,6 +1104,50 @@ body {
 }
 
 
+.cursor{cursor: pointer;}
+
+.custom-dd > a.dropdown-toggle{background-color: #1F3F81;
+    color: white;
+    border-top: 2px solid transparent;
+     padding: 15px; 
+ cursor: pointer;
+    display: block;}
+    .custom-dd  > a.dropdown-toggle:hover{    border-top: 2px solid white;
+        background-color: #1F3F81;
+    color: white;
+    }
+
+
+.custom-dd  > .dropdown-menu >li >a .caret{
+
+     -ms-transform: rotate(-88deg); /* IE 9 */
+    -webkit-transform: rotate(-88deg); /* Chrome, Safari, Opera */
+    transform: rotate(-88deg);
+    transition:transform 0.5s ease; 
+    float: right;    margin-top: 6px;
+}
+
+.custom-dd  > .dropdown-menu >li > a .Odeg{
+
+     -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -32,6 +32,9 @@
         include_once('connection.php');
 
 
+                $get_project = " SELECT * FROM  tbl_projects";
+                $fetch_project = mysqli_query($conn, $get_project);
+
                 $sql = "SELECT id,project_developer FROM tbl_developer";
                 $selectresult = mysqli_query($conn, $sql);
 
@@ -149,7 +152,47 @@
 
 
 
+ <div class="col-xs-12 col-sm-6">
 
+       
+<?php
+
+if (    ($get_project) && ($get_project->num_rows > 0))
+{
+    echo "<table class='table table-bordered table-condensed table-striped'>";
+    //convert query result into an associative array
+
+ 
+   
+    while ($row = $get_project->fetch_array())
+    {         
+            echo "<tr class='$row[0] '>";
+            
+           echo"<td>     $row[0]          </td>";
+
+            echo"<td>    $row[1]          </td>";
+
+            echo"<td class='  $row[1] '>   
+                      
+                        <a href='javascript:void(0); ' onclick='deleteRow($row[id])'
+                        id='delete$row[id]' class='btn btn-danger delete' >Delete</a>
+                                 
+                                  </td>";
+
+
+           
+
+        
+    }
+             echo "</table>";
+
+    // $fetch_Enquir_Result->free();   
+}  
+        $conn->close();  
+?>
+
+
+         </div>
 
 
 

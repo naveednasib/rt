@@ -802,7 +802,7 @@ body:not(.woocommerce-page) {
 /* line 62, ../scss/partials/wide-slider.scss */
 .tile-container .img-cont .sale {
      position: absolute;
-    right: 68px;
+    right: 80px;
     bottom: 0;
     padding: 2%;
     background: rgba(254, 213, 35, 0.82);

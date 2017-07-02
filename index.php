@@ -107,12 +107,12 @@ Our job is to provide you with all the information that will help you to underst
 
 
         <div class="search-box clearfix">
-        
+        <form action="search-result.php" method='post' > 
                 <div class="col-xs-12 col-sm-10" class="form-group">
-                <input type="text" class="form-control" Placeholder="search properties by name ,Developer name or location">
+                <input type="text" class="form-control" name='serach_input' Placeholder="search properties by name ,Developer name or location">
                 </div>
                 <div class="col-xs-12 col-sm-2">
-                    <a class="btn btn-success" href="listing-unit.php">Search</a>
+                    <input class="btn btn-success" type="submit"  value='Search'>
                 </div>
 
 
@@ -145,7 +145,7 @@ Our job is to provide you with all the information that will help you to underst
 
         </div>
 
-
+</form>
 
   </div>
  </div>
@@ -164,194 +164,6 @@ Our job is to provide you with all the information that will help you to underst
   </section>
 
 
-
-    <!--slider container-->
-    <section class="slilder-container">
-        <div class="clearfix mid-container">
-            <div class="col-xs-12 txtx ">
-                <h2 class="heading">Latest OffPlan Projects</h2>
-                <p class="para">We have Properties in these Areas view a list Featured Properties</p>
-            </div>
-
-            <div id="myCarousel" class="carousel  paddingZ slide" data-ride="carousel" data-interval="false">
-                <!-- Indicators -->
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active clearfix">
-                        <div class="col-xs-12 col-sm-6">
-
-                            <img class="img-responsive" src="images/bestdeal.jpg" />
-                            <span class="abs-sale">For Sale</span>
-
-                            <div class="detail">
-                                <div class="border clearfix">
-                                    <div class="col-xs-12 paddingZ txt-tab">
-                                        <h3 class="heading">Unique Villa With Private Beach</h3>
-                                        <p class="para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed d…</p>
-                                    </div>
-
-                                    <div class="ccol-xs-6 paddingZ prop-detail">
-                                        <div class="col-xs-6 col-sm-3 paddingZ">4800 sq ft</div>
-
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ border">$36,00 /pm</div>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-
-                            <img class="img-responsive" src="images/bestdeal.jpg" />
-                            <span class="abs-sale">For Sale</span>
-
-                            <div class="detail">
-                                <div class="border clearfix">
-                                    <div class="col-xs-12 paddingZ txt-tab">
-                                        <h3 class="heading">Unique Villa With Private Beach</h3>
-                                        <p class="para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed d…</p>
-                                    </div>
-
-                                    <div class="ccol-xs-6 paddingZ prop-detail">
-                                        <div class="col-xs-6 col-sm-3 paddingZ">4800 sq ft</div>
-
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ border">$36,00 /pm</div>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6">
-
-                            <img class="img-responsive" src="images/bestdeal.jpg" />
-                            <span class="abs-sale">For Sale</span>
-
-                            <div class="detail">
-                                <div class="border clearfix">
-                                    <div class="col-xs-12 paddingZ txt-tab">
-                                        <h3 class="heading">Unique Villa With Private Beach</h3>
-                                        <p class="para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed d…</p>
-                                    </div>
-
-                                    <div class="ccol-xs-6 paddingZ prop-detail">
-                                        <div class="col-xs-6 col-sm-3 paddingZ">4800 sq ft</div>
-
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ border">$36,00 /pm</div>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-
-                            <img class="img-responsive" src="images/bestdeal.jpg" />
-                            <span class="abs-sale">For Sale</span>
-
-                            <div class="detail">
-                                <div class="border clearfix">
-                                    <div class="col-xs-12 paddingZ txt-tab">
-                                        <h3 class="heading">Unique Villa With Private Beach</h3>
-                                        <p class="para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed d…</p>
-                                    </div>
-
-                                    <div class="ccol-xs-6 paddingZ prop-detail">
-                                        <div class="col-xs-6 col-sm-3 paddingZ">4800 sq ft</div>
-
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ border">$36,00 /pm</div>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6">
-
-                            <img class="img-responsive" src="images/bestdeal.jpg" />
-                            <span class="abs-sale">For Sale</span>
-
-                            <div class="detail">
-                                <div class="border clearfix">
-                                    <div class="col-xs-12 paddingZ txt-tab">
-                                        <h3 class="heading">Unique Villa With Private Beach</h3>
-                                        <p class="para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed d…</p>
-                                    </div>
-
-                                    <div class="ccol-xs-6 paddingZ prop-detail">
-                                        <div class="col-xs-6 col-sm-3 paddingZ">4800 sq ft</div>
-
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ border">$36,00 /pm</div>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-
-                            <img class="img-responsive" src="images/bestdeal.jpg" />
-                            <span class="abs-sale">For Sale</span>
-
-                            <div class="detail">
-                                <div class="border clearfix">
-                                    <div class="col-xs-12 paddingZ txt-tab">
-                                        <h3 class="heading">Unique Villa With Private Beach</h3>
-                                        <p class="para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed d…</p>
-                                    </div>
-
-                                    <div class="ccol-xs-6 paddingZ prop-detail">
-                                        <div class="col-xs-6 col-sm-3 paddingZ">4800 sq ft</div>
-
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ"><i class="glyphicon glyphicon-bed"></i> 3 bedrooms</div>
-                                        <div class="col-xs-6 col-sm-3 paddingZ border">$36,00 /pm</div>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <div class="control-container clearfix">
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <!-- Left and right controls -->
-            </div>
-        </div>
-    </section>
 
 
 
@@ -403,7 +215,13 @@ Our job is to provide you with all the information that will help you to underst
                     <img src="<?php echo $nid?>" />
                     <span class="feature">Featured</span>
                     <span class="sale">Starting Price</span>
-                    <span class=" price"><?php echo $rowUnit[3] ?> </span>
+                    <span class=" price">
+                            <?php
+                              $price =     $rowUnit[3];
+                                                       echo   number_format("$price" ,2,'.',"," ) ;                            
+                            ?>
+                    
+                    </span>
                 </div>
 
                 <div class="txt-cont">
@@ -424,6 +242,7 @@ Our job is to provide you with all the information that will help you to underst
             <!--tile-->
 
 </div>
+
          
 
 
@@ -686,7 +505,7 @@ var value =3;
                                unit_location     = this.unit_location;
                                unit_price        = this.unit_price;
                                unit_feature      = this.unit_feature;
-                               unit_image      = this.unit_image;
+                               unit_image        = this.unit_image;
 
 
 

@@ -802,7 +802,7 @@ body:not(.woocommerce-page) {
 /* line 62, ../scss/partials/wide-slider.scss */
 .tile-container .img-cont .sale {
      position: absolute;
-    right: 68px;
+    right: 80px;
     bottom: 0;
     padding: 2%;
     background: rgba(254, 213, 35, 0.82);
@@ -1102,6 +1102,50 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+.cursor{cursor: pointer;}
+
+.custom-dd > a.dropdown-toggle{background-color: #1F3F81;
+    color: white;
+    border-top: 2px solid transparent;
+     padding: 15px; 
+ cursor: pointer;
+    display: block;}
+    .custom-dd  > a.dropdown-toggle:hover{    border-top: 2px solid white;
+        background-color: #1F3F81;
+    color: white;
+    }
+
+
+.custom-dd  > .dropdown-menu >li >a .caret{
+
+     -ms-transform: rotate(-88deg); /* IE 9 */
+    -webkit-transform: rotate(-88deg); /* Chrome, Safari, Opera */
+    transform: rotate(-88deg);
+    transition:transform 0.5s ease; 
+    float: right;    margin-top: 6px;
+}
+
+.custom-dd  > .dropdown-menu >li > a .Odeg{
+
+     -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

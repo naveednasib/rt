@@ -22,7 +22,7 @@
                     include_once('connection.php');
 
 
-                $sql = "SELECT id,unit_name FROM tbl_unitdetail";
+                $sql = "SELECT id,unit_name FROM unitlisting";
                 $selectresult = mysqli_query($conn, $sql);
 
 

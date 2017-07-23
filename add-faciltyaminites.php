@@ -25,7 +25,7 @@
    
   <!--header-->
         <?php  
-                include_once('layout/cms-header.php');
+                include_once('layout/cms-heazxczxczxder.php');
         ?>
         <!--header-->
 
@@ -59,7 +59,7 @@
                 <tr>
                   
                     <td colspan="2" class="form-group">
-                            <input type="submit" name="upload-images" class="btn btn-lg btn-success">                         
+                            <input type="submit" name="upload-imagesasdasdas" class="btn btn-lg btn-success">                         
                     </td>
                 </tr>
 

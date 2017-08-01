@@ -21,8 +21,6 @@
 
 <?php 
 include_once("connection.php");
-     ob_start();
-    session_start();
     
 
 // if(empty($_SESSION["username"]) && empty($_SESSION["password"]) ){
@@ -35,7 +33,7 @@ if(isset($_POST['login']) )
 {
     $user = $_POST['userid'];
     $pass = $_POST['user_password'];
-
+  
 
     $checkquery = "  SELECT * FROM  tbl_admin_user WHERE username = '$user' AND user_password = '$pass';  ";
 
@@ -53,7 +51,7 @@ if(isset($_POST['login']) )
                   $_SESSION['username'] = '$user';
                     $msg = 'scuess';
                    echo  $msg;
-                  include_once('layout/cms-header.php');
+             header("Location:add-unit.php");
                }
 
 

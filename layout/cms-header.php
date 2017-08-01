@@ -1,5 +1,7 @@
 
-
+  
+  <?php 
+  if ( $_SESSION['username'] ==   "admin"){  ?>
 
 <nav class="navbar cms-header navbar-default navbar-fixed-top">
       <div class="container">
@@ -91,9 +93,16 @@
    
    body{padding-top:80px;}
     </style>
+ 
+ <?php }
+  ?>
+
+
 
 
 <?php
+
+     header("Location:admin.php");
 
   //     }
   // else{

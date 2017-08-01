@@ -3,9 +3,11 @@
 /*prefix*/
 /*placeholder*/
 /* line 2, ../../scss/pages/unitDetail.scss */
+
+body{background-color: #2F2F2F;}
 .header {
   position: relative;
-  background-color: #1F3F81;
+  /*background-color: #2F2F2F;*/
 }
 
 /* line 5, ../../scss/pages/unitDetail.scss */
@@ -68,15 +70,16 @@
 /* line 38, ../../scss/pages/unitDetail.scss */
 .property-amienties .am-div {
   padding: 0;
-  border-right: 5px solid white;
+ 
 }
 /* line 38, ../../scss/pages/unitDetail.scss */
 .property-amienties .am-div span {
-  text-align: center;
-  background: #3a3a3a;
-  color: white;
-  display: block;
-  padding: 15px;
+    text-align: center;
+     color: #9C7028;
+    display: block;
+    padding: 15px;
+     border: #9C7028 2px solid;
+    font-size: 24px;
 }
 /* line 39, ../../scss/pages/unitDetail.scss */
 .property-amienties .am-div i {
@@ -98,3 +101,36 @@
     padding-left: 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+.property-detail-slider article{
+color:#B47E26;
+}
+
+
+.property-detail-slider article h1{margin-bottom: 0;}
+.property-detail-slider article p{
+    font-size: 24px;
+}
+.detail-enquiry h2{
+      font-size: 24px;
+    text-align: center;color:#B47E26;
+}
+.para-unit-detail h2,.Quick-sumary h2,.agent-section h2{color:#B47E26; font-size: 24px;}
+.para-unit-detail {    font-size: 18px;}
+
+
+.Quick-sumary .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #B47E26;
+}
+.Quick-sumary .table>tbody>tr>td,.Quick-sumary .table>tbody>tr>th,.Quick-sumary .table>tfoot>tr>td,.Quick-sumary .table>tfoot>tr>th,.Quick-sumary .table>thead>tr>td, .table>thead>tr>th
+{color:white;}

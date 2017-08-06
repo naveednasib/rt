@@ -70,6 +70,7 @@ body{background-color: #2F2F2F;}
 /* line 38, ../../scss/pages/unitDetail.scss */
 .property-amienties .am-div {
   padding: 0;
+      margin-top: 15px;
  
 }
 /* line 38, ../../scss/pages/unitDetail.scss */
@@ -77,9 +78,9 @@ body{background-color: #2F2F2F;}
     text-align: center;
      color: #9C7028;
     display: block;
-    padding: 15px;
+        padding: 10px 15px;
      border: #9C7028 2px solid;
-    font-size: 24px;
+     font-size: 20px;
 }
 /* line 39, ../../scss/pages/unitDetail.scss */
 .property-amienties .am-div i {
@@ -134,3 +135,24 @@ color:#B47E26;
 }
 .Quick-sumary .table>tbody>tr>td,.Quick-sumary .table>tbody>tr>th,.Quick-sumary .table>tfoot>tr>td,.Quick-sumary .table>tfoot>tr>th,.Quick-sumary .table>thead>tr>td, .table>thead>tr>th
 {color:white;}
+
+
+
+
+
+.highlight-container{  padding-bottom: 10px;   border: #9C7028 2px solid;}
+.highlight-container .heading {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #9C7028;
+        padding: 10px;
+}
+
+ 
+.highlight-container .highlights,.highlight-container  .unit-type{padding:0 15px;}
+
+.highlight-container .text-container{    font-size: 18px;    color: #9c7028;}
+.highlight-container h2{    text-transform: uppercase;    font-size: 20px;}
+
+.highlight-container .highlights .text-container{    height: 120px;    overflow: hidden;}

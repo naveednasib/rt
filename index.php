@@ -22,7 +22,7 @@
 
 
 
-                $fetch_unit_detail =" SELECT *  FROM tbl_unitdetail   LIMIT 6 ";
+                $fetch_unit_detail =" SELECT *  FROM tbl_unitdetail  ORDER BY id DESC  LIMIT 6 ";
                 $unitresult = mysqli_query($conn, $fetch_unit_detail );
 
 

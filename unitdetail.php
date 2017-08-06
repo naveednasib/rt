@@ -62,6 +62,9 @@
                 $fetch_media ="select * from tbl_unit_media2 where unit_id='$id'";
                 $media_query = mysqli_query($conn, $fetch_media);
 
+                $get_highLights       = "select * from tbl_highlights where unit_id='$id'";
+                $get_highLights_query =  mysqli_query($conn,$get_highLights );
+
 
 
 ?>
@@ -161,6 +164,34 @@
 
 
             <div class="col-xs-12 col-sm-4 ">
+               
+    
+                <!--highligth container-->
+                <div class="highlight-container">
+                       <div class="heading">highlights</div> 
+                        
+
+                           <?php while($highLights = mysqli_fetch_array($get_highLights_query)):;?>
+                       <div class=" highlights" >
+                         <h2>  highlights</h2>
+                            <div class="text-container">
+                              <?php echo  $highLights [2]?>
+                            </div>
+                       </div>
+                                 <div class=" unit-type" >
+                                <h2>  Unit Type</h2>
+                            <div class="text-container">
+                                     <?php echo $highLights [3]?>
+                                     </div>
+                                     </div>
+                       <?php endwhile;?>
+                           
+                </div>
+
+               <!--highligth container-->
+
+               
+               
                 <div class="property-amienties mid-container padding15 clearfix">
 
 

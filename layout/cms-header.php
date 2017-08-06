@@ -1,7 +1,7 @@
 
   
-  <?php 
-  if ( $_SESSION['username'] ==   "admin"){  ?>
+//<?php 
+ // if ( $_SESSION['username'] ==   "admin"){  ?>
 
 <nav class="navbar cms-header navbar-default navbar-fixed-top">
       <div class="container">
@@ -31,6 +31,7 @@
                <li><a href="add-faciltyaminites.php">Add Facilty & aminities  </a></li>
                <li><a href="add-payment-plan.php">Add payment plan</a></li>
                <li><a href="add-unit-media2.php">Add Unit media</a></li>
+                <li><a href="add-unit-highlights.php">Add Unit highlights</a></li>
                 <!--<li><a href="view-units.php">View Units</a></li>-->
              
               </ul>
@@ -94,15 +95,16 @@
    body{padding-top:80px;}
     </style>
  
- <?php }
-  ?>
+ <!--
+   <?php // }
+  ?>-->
 
 
 
 
 <?php
 
-     header("Location:admin.php");
+   //  header("Location:admin.php");
 
   //     }
   // else{

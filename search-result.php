@@ -135,9 +135,9 @@
          
 
 
-            <div class="col-xs-12 text-center btn-containr">
+            <!--<div class="col-xs-12 text-center btn-containr">
                 <a href="#" class="btn btn-blue">More Project</a>
-            </div>
+            </div>-->
         </div>
     </section>
 
@@ -158,6 +158,11 @@
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/common.js"></script>
+
+
+
+<script>
+</script>
 
 
 

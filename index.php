@@ -71,6 +71,7 @@
                   <span class="heading-top"><?php echo  $rowlg_slider[3] ?> </span>
                   <strong><?php echo  $rowlg_slider[4] ?></strong>
                   <p class="heading-bottom"><?php echo  $rowlg_slider[5] ?></p>
+                  <a href="unitdetail.php?id=<?php echo $rowlg_slider[1];?>" class="btn btn-lg-slider">Read more</a>
                </h1>
             </div>
          </div>
@@ -552,15 +553,32 @@ var value =3;
               <script>
 $(document).ready(function(){
     
-  $('.dropdown-submenu').on("click", function(e){
+  $('.dropdown-submenu > a').on("click", function(e){
+ 
    $('.dropdown-submenu').children('ul').slideUp();
    $('.dropdown-submenu').find('.caret' ).removeClass('Odeg');
 
-   $(this).find('.caret' ).toggleClass('Odeg');
-    $(this).children('ul').slideToggle();
+
+    $(this).find('.caret' ).toggleClass('Odeg');
+    $(this).siblings('ul').slideToggle();
     e.stopPropagation();
     e.preventDefault();
   });
+
+function checkemptyProject(){
+    
+    $('.dropdown-menu').each(function(){
+       var flag = $(this).has("a").length;
+       if(flag  == 0){
+           
+           $(this).parents(".dropdown-submenu").hide();
+       }
+       console.log(flag);
+    })
+          
+};
+checkemptyProject();
+
 //     $('.dropdown-submenu ').on("mouseleave", function(e){
    
 //     $(this).next('ul').slideToggle();

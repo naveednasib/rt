@@ -87,7 +87,7 @@
 											<li class="dropdown-submenu">
 													
 														<a tabindex="-1"  class="test" href="javascript void(0)">
-														<?php  echo $rowUnit2[1] ?>
+													<span class="property-Project">	<?php  echo $rowUnit2[1] ?></span>
 														<span class="caret"></span>
 														
 														</a>

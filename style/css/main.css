@@ -1223,8 +1223,19 @@ body {
     /* border-radius: 4px; */
 }
 
+.btn-lg-slider{color:white;    font-size: 24px;    background-color: #A68550;transition: all 0.5s ease;}
+.btn-lg-slider:hover{  color:  #A68550;  background-color:white; }
 
+.header-tab2 .property-Project{max-width: 90%;
+  
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+  .header-tab2  .open>.dropdown-menu,.header-tab2  .dropdown-menu{    border-radius: 0;}
+    .header-tab2 .dropdown-submenu >a{font-size:18px;}
 
+.header-tab2 .dropdown-submenu  .dropdown-menu{    border-radius: 0;max-height: 70vh;overflow: auto; }
 
 
 

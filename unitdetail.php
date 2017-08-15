@@ -9,7 +9,7 @@
 
 
     <link href="style/css/pages/unitDetail.css" rel="stylesheet" />
-    <link href="style/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="style/css/lightslider.css" rel="stylesheet" />
     <title>Home page</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -101,48 +101,32 @@
         <div class="owl-slider-container mid-container">
 
             <div class="col-xs-12 col-sm-8 paddingZ">
-                <div id="single-slider" class="owl-carousel single-slider owl-theme">
 
-
-
-                    <?php   while($get_lg_img = mysqli_fetch_array( $img_lg_query)):;         ?>
-                    <?php    $lg_img = $get_lg_img[0];
+                <!--slider secction-->
+                <div class="slider-container">
+                <div class="item">
+                    <div class="clearfix">
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                            <?php   while($get_lg_img = mysqli_fetch_array( $img_lg_query)):;         ?>
+                            <?php    $lg_img = $get_lg_img[0];
                                   $lg_img = str_replace('../','', $lg_img );                           ?>
 
-                    <div class="item">
-                        <img src="<?php echo  $lg_img ;?>" />
+
+
+
+                            <li data-thumb="<?php echo  $lg_img ;?>">
+                                <img src="<?php echo  $lg_img ;?>" />
+                            </li>
+                            <?php  endwhile; ?>
+
+                        </ul>
                     </div>
-                    <?php  endwhile; ?>
-
-
-
-
-
                 </div>
-
-
-
-
-                <!-- mulit slider  -->
-                <div id="multislider" class="owl-carousel multislider owl-theme">
-
-
-                    <?php   while($get_sm_img = mysqli_fetch_array( $img_sm_query)):;         ?>
-                    <?php    $sm_img = $get_sm_img[0];
-                                  $sm_img = str_replace('../','', $sm_img );                           ?>
-
-                    <div class="item">
-                        <img src="<?php echo  $sm_img ;?>" />
-                    </div>
-                    <?php  endwhile; ?>
-
-
-                    <!-- mulit slider  -->
-
-
-
-
                 </div>
+                <!--slider secction-->
+
+
+
 
 
                 <section class="para-unit-detail mid-container padding15 ">
@@ -164,34 +148,34 @@
 
 
             <div class="col-xs-12 col-sm-4 ">
-               
-    
+
+
                 <!--highligth container-->
                 <div class="highlight-container">
-                       <div class="heading">highlights</div> 
-                        
+                    <div class="heading">highlights</div>
 
-                           <?php while($highLights = mysqli_fetch_array($get_highLights_query)):;?>
-                       <div class=" highlights" >
-                         <h2>  highlights</h2>
-                            <div class="text-container">
-                              <?php echo  $highLights [2]?>
-                            </div>
-                       </div>
-                                 <div class=" unit-type" >
-                                <h2>  Unit Type</h2>
-                            <div class="text-container">
-                                     <?php echo $highLights [3]?>
-                                     </div>
-                                     </div>
-                       <?php endwhile;?>
-                           
+
+                    <?php while($highLights = mysqli_fetch_array($get_highLights_query)):;?>
+                    <div class=" highlights">
+                        <h2> highlights</h2>
+                        <div class="text-container">
+                            <?php echo  $highLights [2]?>
+                        </div>
+                    </div>
+                    <div class=" unit-type">
+                        <h2> Unit Type</h2>
+                        <div class="text-container">
+                            <?php echo $highLights [3]?>
+                        </div>
+                    </div>
+                    <?php endwhile;?>
+
                 </div>
 
-               <!--highligth container-->
+                <!--highligth container-->
 
-               
-               
+
+
                 <div class="property-amienties mid-container padding15 clearfix">
 
 
@@ -232,7 +216,7 @@
                 </div>
 
 
-                    <div class="form detail-enquiry paddingZ  col-xs-12">
+                <div class="form detail-enquiry paddingZ  col-xs-12">
                     <div class="form-container">
                         <h2>REGISTER YOUR INTEREST</h2>
                         <div class="form-group">
@@ -416,41 +400,21 @@
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/lightslider.js"></script>
     <script>
         $(document).ready(function () {
 
-            $('#multislider').owlCarousel({
-                loop: false,
-                margin: 10,
-                nav: true,
-                navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 6
-                    }
-                }
-            });
-            $('#single-slider').owlCarousel({
-
-                margin: 10,
-                nav: false,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 1
-                    },
-                    1000: {
-                        items: 1
-                    }
+       
+            $('#image-gallery').lightSlider({
+                gallery: true,
+                item: 1,
+                thumbItem: 9,
+                slideMargin: 0,
+                speed: 1000,
+                auto: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#image-gallery').removeClass('cS-hidden');
                 }
             });
 

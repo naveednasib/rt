@@ -2,7 +2,7 @@
 	 include_once('../connection.php');
 
      $tile_value   = $_POST['value'];
-     $fetch_pagination ="SELECT * FROM `tbl_unitdetail`ORDER BY id ASC LIMIT  $tile_value ,6";
+     $fetch_pagination ="SELECT * FROM `tbl_unitdetail`ORDER BY id DESC LIMIT  $tile_value ,6";
     
   
   
@@ -27,7 +27,7 @@
                     unit_price,
                     unit_feature,  
                     (SELECT images_path FROM tbl_unit_sm_img AS tbl_img   WHERE tbl_img.unit_id ='$id' LIMIT 1 )
-                    FROM tbl_unitdetail WHERE id= '$id'
+                    FROM tbl_unitdetail WHERE id= '$id' 
                         ";
                     
                     $resultunitdetail = mysqli_query($conn,$fetch_unitdetail);

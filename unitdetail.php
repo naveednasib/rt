@@ -417,8 +417,31 @@
                     $('#image-gallery').removeClass('cS-hidden');
                 }
             });
+            $('.dropdown-submenu > a').on("click", function(e){
+ 
+   $('.dropdown-submenu').children('ul').slideUp();
+   $('.dropdown-submenu').find('.caret' ).removeClass('Odeg');
 
 
+    $(this).find('.caret' ).toggleClass('Odeg');
+    $(this).siblings('ul').slideToggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  function checkemptyProject(){
+    
+    $('.dropdown-menu').each(function(){
+       var flag = $(this).has("a").length;
+       if(flag  == 0){
+           
+           $(this).parents(".dropdown-submenu").hide();
+       }
+    
+    })
+          
+};
+checkemptyProject();
         })
     </script>
 

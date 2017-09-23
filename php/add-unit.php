@@ -23,23 +23,37 @@
 
   
 
- $sql =	"insert into tbl_unitdetail( unit_name, unit_location, unit_price, unit_size, unit_readyby, unit_feature,        unit_type,unit_developerid,unit_developerName,unit_bedrooms,unit_bathroom,unit_status,unit_floor,unit_launched)
+ $sql =	"insert into tbl_unitdetail( 
+            unit_name,
+            unit_location,
+            unit_price,
+            unit_size,
+            unit_readyby,
+            unit_feature,  
+            unit_type,
+            unit_developerid,
+            unit_developerName,
+            unit_bedrooms,
+            unit_bathroom,
+            unit_status,
+            unit_floor,
+            unit_launched)
 
  		 values (
- 		     '$unitname',
- 		     '$unit_loc',
+ 		   '$unitname',
+ 		   '$unit_loc',
  	       '$unit_prices',
  	       '$unit_size',
  	       '$unit_readyBy',
  	       '$unit_feature', 		 
  	       '$unit_type',
-         '$unit_developerId',
-         '$unit_developerName',
-         '$unit_bedrooms',
-         '$unit_bathrooms',
-         '$unit_status',
-         '$unit_floors',
-         '$unit_launched'
+           '$unit_developerId',
+           '$unit_developerName',
+           '$unit_bedrooms',
+           '$unit_bathrooms',
+           '$unit_status',
+           '$unit_floors',
+           '$unit_launched'
 
 
      )";

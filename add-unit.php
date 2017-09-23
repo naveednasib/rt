@@ -120,7 +120,7 @@
                         <td class="form-group">
 
 
-                              <select required name="unit-developerName" onchange="setprojectName(this)" class="form-control select-option">
+                              <select required name="unit-projectName" onchange="setprojectName(this)" class="form-control select-option">
                                 <?php   while($row2 = mysqli_fetch_array($projectsresult)):; ?>
 
                                     <option value="<?php echo $row2[0];?>"><?php echo $row2[1] ?></option>

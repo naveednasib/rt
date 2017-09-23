@@ -27,7 +27,7 @@
 
 
                 $fetch_lg_sliderimg ="SELECT * FROM tbl_homepage_lg_slider";
-                $lg_sliderimgresult = mysqli_query($conn, $fetch_lg_sliderimg );
+                $lg_sliderimgresult = mysqli_query($conn, $fetch_lg_sliderimg);
 
 
                     ?>
@@ -219,7 +219,7 @@ Our job is to provide you with all the information that will help you to underst
                     <span class=" price">
                             <?php
                               $price =     $rowUnit[3];
-                                                       echo   number_format("$price" ,2,'.',"," ) ;                            
+                               echo   number_format("$price" ,2,'.',"," ) ;                            
                             ?>
                     
                     </span>
@@ -573,7 +573,7 @@ function checkemptyProject(){
            
            $(this).parents(".dropdown-submenu").hide();
        }
-       console.log(flag);
+       
     })
           
 };
